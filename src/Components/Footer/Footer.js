@@ -7,14 +7,11 @@ import youtube from '../../assets/images/Youtube.png';
 
 function Header() {
   return (
-    <div
-      style={{ backgroundColor: '#4FAA4D' }}
-      className=" font-sans font-medium	lg:flex  lg:justify-between  absolute  inset-x-0 bottom-0 bg-green-500  "
-    >
+    <div className="bg-primary font-sans font-medium lg:flex lg:justify-between absolute inset-x-0 bottom-0 bg-green-500">
       <div>
         <img src={logoFooter} className="w-40 h-20 mx-11 p-3" alt="logo" />
       </div>
-      <div className="my-7 text-white ">All rights reserved</div>
+      <div className="my-7 text-white "> © All rights reserved</div>
       <div className="my-7 text-white mx-11 flex space-x-8">
         <p>Follow us :</p>
         <div className="flex flex-row space-x-2 ">
