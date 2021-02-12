@@ -1,10 +1,10 @@
 import React from "react";
 import './button.css'
-function Button (props) {
+function Button ({ text, onClick }) {
    
       return (
-        <button  type="button" onClick={props.fct} className="bg-green-400 hover:bg-green-700 text-white font-bold py-3 px-7 rounded-full " >
-        {props.text}
+        <button  type="button" onClick={onClick} className="bg-primary hover:bg-green-700 text-white font-bold py-3 px-7 rounded-full " >
+        {text}
         </button>
       );
     
