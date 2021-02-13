@@ -25,4 +25,4 @@ function Footer() {
     </div>
   );
 }
-export default Gooter;
+export default Footer;
