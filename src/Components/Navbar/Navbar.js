@@ -1,21 +1,13 @@
+import navElements from '../../Constants/navElements.js';
 function Navbar() {
   // in this component I am using "require" inside the src of the img to import images dynamiclly
-  const NavArr = [
-    'Home',
-    'Spread',
-    'Trackers',
-    'Interest',
-    'Mood',
-    'Collections',
-    'Settings',
-  ];
 
   // this will define the active tap to change its style in the navbar, we can get its value from the Route later
   const active = 'Trackers';
 
   return (
     <div className="bg-white rounded-xl shadow-md flex flex-wrap justify-between px-72 py-2 mx-8 my-2">
-      {NavArr.map((el) => {
+      {navElements.map((el) => {
         if (active === el) {
           return (
             <div
@@ -45,7 +37,7 @@ function Navbar() {
                 />
               </div>
               <div>
-                <div className="font-medium text-Grey">{el}</div>
+                <div className="font-medium text-Grey text-base">{el}</div>
               </div>
             </div>
           );
