@@ -5,7 +5,7 @@ import instagram from '../../assets/images/Instagram.png';
 import twitter from '../../assets/images/Twitter.png';
 import youtube from '../../assets/images/Youtube.png';
 
-function Header() {
+function Footer() {
   return (
     <div className="bg-primary font-sans font-medium lg:flex lg:justify-between absolute inset-x-0 bottom-0 bg-green-500">
       <div>
@@ -25,4 +25,4 @@ function Header() {
     </div>
   );
 }
-export default Header;
+export default Gooter;
