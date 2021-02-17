@@ -13,6 +13,6 @@ export default function YourJournal() {
          <Button onClick={()=>{alert("Hello!")}} text={"Get started"} />
          </div>
         <img src={Objects} alt="Objects" className="right-0 top-40 absolute "/>
-        <img src={Datapoints} alt="Data" className="relative left-0 top-0 "/>   
+        <img src={DataPoints} alt="Data" className="relative left-0 top-0 "/>   
     </div>
     )}
