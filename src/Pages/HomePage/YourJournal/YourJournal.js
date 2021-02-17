@@ -1,6 +1,6 @@
 import React from "react";
-import img1 from '../../../assets/images/Data points-pana 1.png';
-import img2 from '../../../assets/images/OBJECTS.png';
+import DataPoints from '../../../assets/images/Data points-pana 1.png';
+import Objects from '../../../assets/images/OBJECTS.png';
 import Button from "../../../Components/button/button.js";
 
 export default function YourJournal() {
@@ -12,7 +12,7 @@ export default function YourJournal() {
          <div className=" flex justify-center top-20 relative">
          <Button onClick={()=>{alert("Hello!")}} text={"Get started"} />
          </div>
-        <img src={img2} alt="Objects" className="right-0 top-40 absolute "/>
-        <img src={img1} alt="Data" className="relative left-0 top-0 "/>   
+        <img src={Objects} alt="Objects" className="right-0 top-40 absolute "/>
+        <img src={Datapoints} alt="Data" className="relative left-0 top-0 "/>   
     </div>
     )}
