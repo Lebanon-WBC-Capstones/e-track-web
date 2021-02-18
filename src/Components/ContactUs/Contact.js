@@ -18,11 +18,9 @@ function Contact() {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      {' '}
       <div className="w-full h-8"></div>
       <div className="font-semibold text-6xl flex justify-center text-gray-700 font-mono">
-        {' '}
-        Contact Us{' '}
+        Contact Us
       </div>
       <div className="w-full h-28"></div>
       <div className="flex justify-center space-x-24 > * ">
@@ -46,7 +44,7 @@ function Contact() {
               onChange={handleChange}
             />
             <br />
-            <input
+            <textarea
               className="h-64 w-96 p-2 text-left mb-4  border-gray-500 border-solid box-border rounded-md border"
               type="text"
               name="message"
@@ -57,15 +55,13 @@ function Contact() {
             <br />
 
             <div className="flex justify-center">
-              {' '}
               <Button text="Send" />
             </div>
           </form>
         </div>
 
-        <div className>
-          {' '}
-          <img src={ContactIMG} alt="contact pic" />{' '}
+        <div>
+          <img src={ContactIMG} alt="contact pic" />
         </div>
       </div>
     </div>
