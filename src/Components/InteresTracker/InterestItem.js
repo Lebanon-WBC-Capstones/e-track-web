@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import Components this is the parent
 
-const TrackerItem = ({ title, num, date }) => {
+const InterestItem = ({ title, num, date }) => {
   const [txtColor, setTxtColor] = useState('text-gray-800');
   const [borderColor, setBorderColor] = useState('border-gray-800');
   const [backgroundColor, setBackgroundColor] = useState('bg-white');
@@ -32,4 +32,4 @@ const TrackerItem = ({ title, num, date }) => {
     </div>
   );
 };
-export default TrackerItem;
+export default InterestItem;

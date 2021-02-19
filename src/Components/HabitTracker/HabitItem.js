@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 
-const TrackerButton = ({ title, duration }) => {
+const HabitItem = ({ title, duration }) => {
   // Creating an array that will handle all the <div> and then we will display only this "progress" array
   const progress = [];
+  // Creating strings to hold the classes and the colors
+  const bglightGrey =
+    'bg-lightGrey w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center';
+  const bgprimary =
+    'bg-primary w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center';
+  const bgred =
+    'bg-red-500 w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center';
+
   for (let i = 1; i <= duration - 1; i++) {
     //the first push is for the rounded circle with the number in it
     progress.push(
@@ -10,26 +18,14 @@ const TrackerButton = ({ title, duration }) => {
         <div
           id={i}
           onClick={() => {
-            if (
-              document.getElementById(i).className ===
-              'bg-lightGrey w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center'
-            ) {
-              if (i === 1)
-                document.getElementById(i).className =
-                  'bg-primary w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center';
+            if (document.getElementById(i).className === bglightGrey) {
+              if (i === 1) document.getElementById(i).className = bgprimary;
               console.log(i);
               for (let j = 1; j < i; j++) {
-                if (
-                  document.getElementById(j).className ===
-                  'bg-lightGrey w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center'
-                ) {
-                  document.getElementById(j).className =
-                    'bg-red-500 w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center';
-                  document.getElementById(i).className =
-                    'bg-primary w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center';
-                } else
-                  document.getElementById(i).className =
-                    'bg-primary w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center';
+                if (document.getElementById(j).className === bglightGrey) {
+                  document.getElementById(j).className = bgred;
+                  document.getElementById(i).className = bgprimary;
+                } else document.getElementById(i).className = bgprimary;
               }
             }
           }}
@@ -63,25 +59,15 @@ const TrackerButton = ({ title, duration }) => {
       <div
         id={{ duration }}
         onClick={() => {
-          if (
-            document.getElementById({ duration }).className ===
-            'bg-lightGrey w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center'
-          ) {
-            document.getElementById({ duration }).className =
-              'bg-primary w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center';
+          if (document.getElementById({ duration }).className === bglightGrey) {
+            document.getElementById({ duration }).className = bgprimary;
             console.log(duration);
             for (let j = 1; j < duration; j++) {
-              if (
-                document.getElementById(j).className ===
-                'bg-lightGrey w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center'
-              ) {
-                document.getElementById(j).className =
-                  'bg-red-500 w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center';
-                document.getElementById({ duration }).className =
-                  'bg-primary w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center';
+              if (document.getElementById(j).className === bglightGrey) {
+                document.getElementById(j).className = bgred;
+                document.getElementById({ duration }).className = bgprimary;
               } else
-                document.getElementById({ duration }).className =
-                  'bg-primary w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center';
+                document.getElementById({ duration }).className = bgprimary;
             }
           }
         }}
@@ -109,4 +95,4 @@ const TrackerButton = ({ title, duration }) => {
   );
 };
 
-export default TrackerButton;
+export default HabitItem;
