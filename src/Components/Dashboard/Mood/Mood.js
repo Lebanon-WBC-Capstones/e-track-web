@@ -1,4 +1,4 @@
-import moodElements from './../../Constants/moodElements.js';
+import moodElements from './../../../Constants/moodElements.js';
 function Mood() {
   return (
     <div className="bg-white text-Grey rounded-xl shadow-md p-3 min-w-min text-center">
@@ -10,7 +10,9 @@ function Mood() {
           return (
             <img
               className="h-12 w-12 justify-self-center"
-              src={require(`../../assets/images/emoji/${el.title}.png`).default}
+              src={
+                require(`../../../assets/images/emoji/${el.title}.png`).default
+              }
               alt={`${el} emoji`}
             />
           );

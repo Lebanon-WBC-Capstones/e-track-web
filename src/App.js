@@ -1,9 +1,9 @@
-import Profile from './Components/Profile/Profile.js';
-import TodoList from './Components/TodoList/Todolist.js';
-import Weather from './Components/Weather/Weather.js';
-import Events from './Components/Events/Events.js';
-import Quote from './Components/Quote/Quote.js';
-import Mood from './Components/Mood/Mood.js';
+import Profile from './Components/Dashboard/Profile/Profile.js';
+import TodoList from './Components/Dashboard/TodoList/Todolist.js';
+import Weather from './Components/Dashboard/Weather/Weather.js';
+import Events from './Components/Dashboard/Events/Events.js';
+import Quote from './Components/Dashboard/Quote/Quote.js';
+import Mood from './Components/Dashboard/Mood/Mood.js';
 function App() {
   const profile = {
     Avatar: '',

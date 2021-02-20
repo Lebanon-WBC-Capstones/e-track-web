@@ -1,5 +1,5 @@
 // if the user does not have a profile picture, the avatar icon will be the default
-import Avatar from '../../assets/images/Avatar.png';
+import Avatar from '../../../assets/images/Avatar.png';
 
 function Profile({ profile }) {
   let imgSrc;
