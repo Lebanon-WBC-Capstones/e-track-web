@@ -6,7 +6,7 @@ function Profile({ profile }) {
   profile.Avatar === '' ? (imgSrc = Avatar) : (imgSrc = profile.Avatar);
 
   return (
-    <div className="bg-white rounded-xl shadow-md flex flex-wrap p-3 w-1/5 min-w-min justify-items-center content-center">
+    <div className="bg-white rounded-xl shadow-md flex flex-wrap p-3 min-w-min justify-items-center content-center">
       <figure>
         <img
           className="w-14 h-14 rounded-full mr-5"

@@ -18,7 +18,7 @@ function Weather() {
   }, []);
 
   return (
-    <div className="bg-white rounded-xl shadow-md flex flex-wrap p-3 w-1/5 min-w-min justify-items-center content-center">
+    <div className="bg-white rounded-xl shadow-md flex flex-wrap p-3 min-w-min justify-items-center content-center">
       {weather !== undefined ? (
         <>
           <figure>
