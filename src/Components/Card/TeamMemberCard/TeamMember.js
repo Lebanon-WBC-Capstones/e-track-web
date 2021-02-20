@@ -39,10 +39,9 @@ const card = [
 ].map((anObjectMapped, index) => {
   return (
     <div className="w-52 m-auto " key={`${anObjectMapped.name}`}>
-      {anObjectMapped.photo}{' '}
+      {anObjectMapped.photo}
       <div className="flex justify-center text-center">
-        {' '}
-        {anObjectMapped.name} <br /> {anObjectMapped.role}{' '}
+        {anObjectMapped.name} <br /> {anObjectMapped.role}
       </div>
     </div>
   );
