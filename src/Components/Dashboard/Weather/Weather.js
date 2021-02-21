@@ -2,10 +2,10 @@
 import { useEffect, useState } from 'react';
 function Weather() {
   const [weather, setWeather] = useState(undefined);
-
+  const location = 'tripoli,lb';
   async function fetchWeather() {
     fetch(
-      'http://api.openweathermap.org/data/2.5/weather?q=tripoli,lb&APPID=05d7bd1f7af88c88e838a9bb3ba46e8f'
+      `http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=05d7bd1f7af88c88e838a9bb3ba46e8f`
     )
       .then((response) => response.json())
       .then((data) => {

@@ -1,4 +1,5 @@
 // if the user does not have a profile picture, the avatar icon will be the default
+// props example : profile = {Avatar: '', name: 'Charles Davies', occupation: 'Managing Director'}
 import Avatar from '../../../assets/images/Avatar.png';
 
 function Profile({ profile }) {
