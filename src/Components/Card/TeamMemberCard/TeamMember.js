@@ -38,9 +38,12 @@ const card = [
   },
 ].map((anObjectMapped, index) => {
   return (
-    <div className="w-52 m-auto " key={`${anObjectMapped.name}`}>
+    <div
+      className="w-54 h-80 transform hover:scale-110 m-auto p-5 hover:shadow-2xl duration-500"
+      key={`${anObjectMapped.name}`}
+    >
       {anObjectMapped.photo}
-      <div className="flex justify-center text-center">
+      <div className="flex justify-center text-center text-gray-700 text-xl font-semibold">
         {anObjectMapped.name} <br /> {anObjectMapped.role}
       </div>
     </div>
