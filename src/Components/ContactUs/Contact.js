@@ -1,4 +1,4 @@
-import ContactIMG from '../../Assets/images/contactIMG.png';
+import ContactIMG from '../../assets/images/contactIMG.png';
 import React, { useState } from 'react';
 import Button from '../button/button';
 

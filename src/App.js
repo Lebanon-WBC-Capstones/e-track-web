@@ -1,9 +1,9 @@
-import OurProject from './Pages/AboutPage/OurProject/OurProject';
+import About from './Pages/AboutPage/OurProject/AboutUs';
 
 function App() {
   return (
     <div>
-      <OurProject />
+      <About />
     </div>
   );
 }

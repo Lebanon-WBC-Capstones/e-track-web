@@ -15,11 +15,11 @@ function Footer() {
       <div className="my-7 text-white mx-11 flex space-x-8">
         <p>Follow us :</p>
         <div className="flex flex-row space-x-2 ">
-          <img src={instagram} width="32px" height="32px" />
-          <img src={dribbble} width="32px" height="32px" />
+          <img src={instagram} alt="instagram" width="32px" height="32px" />
+          <img src={dribbble} alt="dribble" width="32px" height="32px" />
 
-          <img src={twitter} width="32px" height="32px" />
-          <img src={youtube} width="32px" height="32px" />
+          <img src={twitter} alt="twitter" width="32px" height="32px" />
+          <img src={youtube} alt="youtube" width="32px" height="32px" />
         </div>
       </div>
     </div>
