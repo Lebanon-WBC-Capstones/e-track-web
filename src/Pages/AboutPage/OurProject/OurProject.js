@@ -14,12 +14,12 @@ export default function OurProject() {
         <p className=" text-3xl text-left font-sans z-10 ">
           <span className="text-5xl font-medium flex justify-center">
             Our project
-          </span>{' '}
+          </span>
           <br /> <br />
           It is all about organizing and managing <br />
           the biggest project in anyone's life
           <br />
-          "our whole life". <br /> I learnt about journal few years ago, and{' '}
+          "our whole life". <br /> I learnt about journal few years ago, and
           <br />
           it changed my life, I keep tracking my <br />
           days, my activities, and my hobbies,
@@ -32,9 +32,8 @@ export default function OurProject() {
             <br /> a better person.”
             <br />
           </span>
-          <br />{' '}
+          <br />
           <span className="font-semibold">
-            {' '}
             – Cal Newport, author of Deep Work
           </span>
         </p>
