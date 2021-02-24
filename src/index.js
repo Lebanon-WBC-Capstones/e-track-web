@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Suspense } from 'react';
+
+// import i18n (needs to be bundled ;))
+import './i18n';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Suspense fallback={<div>Loading... </div>}>
+      <App />
+    </Suspense>
   </React.StrictMode>,
   document.getElementById('root')
 );
