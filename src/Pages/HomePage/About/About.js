@@ -2,14 +2,14 @@ import React from 'react';
 import img1 from '../../../assets/images/Add notes-cuate 1.png';
 import img2 from '../../../assets/images/Good team-rafiki 5.png';
 
-export default function About() {
+function About() {
   return (
-    <div>
+    <div className="relative">
       <div className="inline-block">
         <img
           src={img2}
           alt="yellow"
-          className="left-0 top-20 transform rotate-12.11 opacity-0.6 absolute"
+          className="left-0 top-20 transform rotate-12.11 opacity-0.6 "
         />
         <img
           src={img1}
@@ -40,3 +40,4 @@ export default function About() {
     </div>
   );
 }
+export default About;

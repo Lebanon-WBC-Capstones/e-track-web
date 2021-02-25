@@ -1,11 +1,11 @@
 import React from 'react';
-import Logo from '../../../Assets/Images/Logo.png';
-import img1 from '../../../Assets/Images/img1.png';
+import Logo from '../../../assets/images/Logo.png';
+import img1 from '../../../assets/images/img1.png';
 import Button from '../../../Components/button/button';
 
 function Header() {
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gray-100 min-h-screen relative">
       <img
         src={Logo}
         className="w-1/12 h-auto absolute left-14 top-9"
