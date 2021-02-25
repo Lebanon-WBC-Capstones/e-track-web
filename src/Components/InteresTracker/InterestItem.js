@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 // import Components this is the parent
 
 const InterestItem = ({ title, num, date }) => {
-  // const [txtColor, setTxtColor] = useState('text-gray-800');
-  // const [borderColor, setBorderColor] = useState('border-gray-800');
-  // const [backgroundColor, setBackgroundColor] = useState('bg-white');
-
   const [interest, setInterst] = useState({
     txtColor: 'text-gray-800',
     borderColor: 'border-gray-800',
@@ -19,19 +15,12 @@ const InterestItem = ({ title, num, date }) => {
         borderColor: 'border-white',
         backgroundColor: 'bg-primary',
       });
-
-      // interest.setInterst.backgroundColor('bg-primary');
-      // interest.setInterst.txtColor('text-white');
-      // interest.setInterst.borderColor('border-white');
     } else {
       setInterst({
         txtColor: 'text-gray-800',
         borderColor: 'border-gray-800',
         backgroundColor: 'bg-white',
       });
-      // interest.setInterst.backgroundColor('bg-white');
-      // interest.setInterst.txtColor('text-gray-800');
-      // interest.setInterst.borderColor('border-gray-800');
     }
   };
 

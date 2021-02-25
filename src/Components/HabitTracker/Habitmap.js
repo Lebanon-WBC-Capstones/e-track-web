@@ -17,7 +17,7 @@ const Habitmap = ({ title, duration, click }) => {
               <div key={el.id} className="z-20">
                 <div
                   id={el.id}
-                  onClick={() => click}
+                  onClick={() => click()}
                   className={`bg-${color} w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center`}
                 >
                   <span className="text-black text-center w-full text-xs">
