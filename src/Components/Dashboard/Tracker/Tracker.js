@@ -2,9 +2,12 @@
 import Addnew from '../../../assets/images/Addnew.png';
 
 function Tracker({ tracker }) {
-  const today = tracker.track.filter(
-    (el) => el.date === new Date().toDateString()
-  )[0];
+  const today = null;
+  if (tracker) {
+    today = tracker.track.filter(
+      (el) => el.date === new Date().toDateString()
+    )[0];
+  }
   return (
     <div className="bg-white text-Grey rounded-xl shadow-md p-3 min-w-min">
       <h2 className="font-medium text-Grey text-base text-center pb-3">
