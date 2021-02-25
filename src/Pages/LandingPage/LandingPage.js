@@ -10,7 +10,7 @@ function LandingPage() {
     <div>
       <Header />
       <About />
-
+      <Elements />
       <YourJournal />
       <Footer />
     </div>
