@@ -1,5 +1,27 @@
+import Navbar from './Components/Navbar/Navbar.js';
+import { useTranslation } from 'react-i18next';
+
 function App() {
-  return <div></div>;
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
+  return (
+    <div className="App">
+      <Navbar />
+      <button
+        onClick={() => {
+          changeLanguage(
+            window.localStorage.getItem('lng') === 'ar' ? 'en-US' : 'ar'
+          );
+        }}
+      >
+        change lang
+      </button>
+    </div>
+  );
 }
 
 export default App;
