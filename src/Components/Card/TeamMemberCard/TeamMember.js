@@ -39,7 +39,7 @@ const card = [
 ].map((anObjectMapped, index) => {
   return (
     <div
-      className="w-54 h-80 transform hover:scale-10 m-auto p-5 hover:shadow-2xl duration-500"
+      className="w-54 h-80 transform hover:scale-110 m-auto p-5 hover:shadow-2xl duration-500"
       key={`${anObjectMapped.name}`}
     >
       {anObjectMapped.photo}
@@ -52,7 +52,7 @@ const card = [
 
 function TeamMembers() {
   return (
-    <div>
+    <div className="bg-white">
       <div className="w-full h-8"></div>
       <div className="font-semibold text-6xl flex justify-center text-gray-700 font-mono">
         Team Members
