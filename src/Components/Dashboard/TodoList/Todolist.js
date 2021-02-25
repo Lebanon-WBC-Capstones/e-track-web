@@ -62,7 +62,7 @@ function TodoList() {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-md pt-3 h-screen min-w-min text-center">
+    <div className="bg-white rounded-xl shadow-md pt-3 h-full min-w-min text-center">
       <h2 className="font-medium text-Grey">My Todo List</h2>
       <div className="p-3 shadow-sm w-100"></div>
       <div>

@@ -1,4 +1,5 @@
 import Navbar from './Components/Navbar/Navbar.js';
+import DashboardPage from './Pages/DashboardPage/DashboardPage.js';
 import { useTranslation } from 'react-i18next';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <button
+      {/* <button
         onClick={() => {
           changeLanguage(
             window.localStorage.getItem('lng') === 'ar' ? 'en-US' : 'ar'
@@ -19,7 +20,8 @@ function App() {
         }}
       >
         change lang
-      </button>
+      </button> */}
+      <DashboardPage />
     </div>
   );
 }
