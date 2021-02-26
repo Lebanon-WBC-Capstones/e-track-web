@@ -40,7 +40,7 @@ export const trackers = [
     title: 'brush my teeth',
     duration: 14,
     StartDate: 'Sat Feb 20 2021',
-    ongoing: true,
+    completed: false,
     track: [
       { id: 1, status: 'checked', date: 'Sat Feb 20 2021' },
       { id: 2, status: 'unchecked', date: 'Sun Feb 21 2021' },
@@ -63,7 +63,7 @@ export const trackers = [
     title: 'sport',
     duration: 7,
     StartDate: 'Sun Feb 28 2021',
-    ongoing: true,
+    completed: false,
     track: [
       { id: 1, status: 'checked', date: 'Sun Feb 28 2021' },
       { id: 2, status: 'unchecked', date: 'Sun Feb 28 2021' },
@@ -105,6 +105,7 @@ export const interest = [
       { id: 1, title: 'Attack on titan', completed: true },
       { id: 2, title: 'jujutsu kaisen', completed: true },
       { id: 3, title: 'Horimiya', completed: true },
+      { id: 4, title: 'beastars', completed: false },
     ],
   },
 ];

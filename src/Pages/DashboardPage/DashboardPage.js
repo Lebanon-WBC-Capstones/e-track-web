@@ -17,7 +17,7 @@ function DashboardPage() {
     return date.toDateString() === new Date().toDateString() ? 'event' : null;
   }
 
-  const tracker = trackers.filter((el) => el.ongoing)[0];
+  const tracker = trackers.filter((el) => !el.completed)[0];
   const goal = interest.filter((el) => !el.completed)[0];
 
   return (

@@ -2,7 +2,7 @@
 import Addnew from '../../../assets/images/Addnew.png';
 
 function Tracker({ tracker }) {
-  const today = null;
+  let today = null;
   if (tracker) {
     today = tracker.track.filter(
       (el) => el.date === new Date().toDateString()
