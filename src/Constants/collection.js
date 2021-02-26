@@ -1,19 +1,19 @@
 const collection = [
 {id:1,
     name:"Gratitude",
-    color:"#F7C1FF"},
+    color:"pink-300"},
 {id:2,
     name:"Memories",
-    color:"#C3F2F5"},
+    color:"blue-300"},
 {id:3,
     name:"Notes",
-    color:"#FFC7C7"},
+    color:"red-300"},
 {id:4,
     name:"Goals",
-    color:"#A89AFF"},
+    color:"indigo-400"},
 {id:5,
     name:"Thoughts",
-    color:"#FFE9AF"},
+    color:"yellow-200"},
 ]
 
 export default collection;
