@@ -27,6 +27,10 @@
 .App-link {
   color: #61dafb;
 }
+.avadh {
+  animation: move 4s infinite;
+  position: relative;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -34,5 +38,17 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes move {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 7px;
+  }
+  100% {
+    top: 0px;
   }
 }

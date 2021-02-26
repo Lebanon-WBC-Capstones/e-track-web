@@ -1,25 +1,10 @@
-import Navbar from './Components/Navbar/Navbar.js';
-import { useTranslation } from 'react-i18next';
+import LandingPage from './Pages/LandingPage/LandingPage.js';
+import 'aos/dist/aos.css';
 
 function App() {
-  const { t, i18n } = useTranslation();
-
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
-
   return (
-    <div className="App">
-      <Navbar />
-      <button
-        onClick={() => {
-          changeLanguage(
-            window.localStorage.getItem('lng') === 'ar' ? 'en-US' : 'ar'
-          );
-        }}
-      >
-        change lang
-      </button>
+    <div>
+      <LandingPage />
     </div>
   );
 }
