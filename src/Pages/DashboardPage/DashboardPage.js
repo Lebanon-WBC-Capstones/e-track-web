@@ -21,7 +21,7 @@ function DashboardPage() {
   const goal = interest.filter((el) => !el.completed)[0];
 
   return (
-    <div className="flex px-5 flex-wrap w-full sm:mx-0 bg-lightGrey p-2">
+    <div className="flex px-5 flex-wrap w-full sm:mx-0 p-2">
       <div className="sm:w-full md:w-full lg:w-1/5 flex flex-col justify-between">
         <div className="p-2">
           <Profile profile={profile} />
