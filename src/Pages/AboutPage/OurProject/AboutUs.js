@@ -9,14 +9,13 @@ export default function AboutUs() {
   return (
     <div className="bg-gray-100 min-h-screen">
       <img src={yellow} alt="yellow" className="absolute right-0 top-0 w-2/3" />
-      <div className="h-48"></div>
-      <div className="h-1/4 flex justify-center space-x-52 > * mr-40">
-        <img src={About_Us} alt="about us" className=" z-10" />
-        <p className=" text-3xl text-left font-sans z-10 ">
-          <span className="text-5xl font-medium flex justify-center">
+      <div className="flex justify-around h-screen items-center flex-wrap">
+        <img src={About_Us} alt="about us" className="z-10" />
+        <p className=" text-xl text-left font-sans z-10">
+          <span className="text-2xl font-medium flex justify-center ">
             Our project
           </span>
-          <br /> <br />
+          <br />
           It is all about organizing and managing <br />
           the biggest project in anyone's life
           <br />
@@ -39,13 +38,10 @@ export default function AboutUs() {
           </span>
         </p>
       </div>
-      <div className="h-52"></div>
 
       <Team />
       <ContactUs />
-      <div className="absolute inset-x-0">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
