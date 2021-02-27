@@ -5,7 +5,7 @@ const navElements = [
   'Interest',
   'Mood',
   'Collections',
-  'Settings',
+  'Profile',
 ];
 
 export default navElements;
