@@ -1,9 +1,9 @@
 import React from 'react';
-import About_Us from '../../../assets/images/AboutUs.png';
-import yellow from '../../../assets/images/yellow.png';
-import Team from '../../../Components/Card/TeamMemberCard/TeamMember';
-import ContactUs from '../../../Components/ContactUs/Contact';
-import Footer from '../../../Components/Footer/Footer';
+import About_Us from '../../assets/images/AboutUs.png';
+import yellow from '../../assets/images/yellow.png';
+import Team from '../../Components/TeamMemberCard/TeamMember';
+import ContactUs from '../../Components/ContactUs/Contact';
+import Footer from '../../Components/Footer/Footer';
 
 export default function AboutUs() {
   return (
