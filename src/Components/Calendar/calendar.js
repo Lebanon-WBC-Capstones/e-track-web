@@ -21,10 +21,10 @@ import Calendar from 'react-calendar';
 
 function CalendarComp({ classDayfct, onClick, startDate }) {
   return (
-    <div className="App">
+    <div>
       <Calendar
         defaultView="month"
-        className="react-calendar bg-white rounded-xl shadow-md"
+        className="react-calendar bg-white rounded-xl shadow-md w-full"
         view="month"
         minDetail="month"
         onClickDay={(value) => {
