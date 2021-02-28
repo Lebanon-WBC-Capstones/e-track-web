@@ -13,4 +13,4 @@ export default function OurProject() {
       <span className="font-semibold"> – Cal Newport, author of Deep Work</span>
       </p>
     </div>
-    )}
+    )} 
