@@ -1,4 +1,3 @@
-// Components
 import Events from '../../Components/Dashboard/Events/Events.js';
 import Profile from '../../Components/Dashboard/Profile/Profile.js';
 import CalendarComp from '../../Components/Calendar/calendar.js';

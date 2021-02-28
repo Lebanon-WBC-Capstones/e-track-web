@@ -1,27 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import img1 from '../../../assets/images/Add notes-cuate 1.png';
 import img2 from '../../../assets/images/Good team-rafiki 5.png';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
-export default function About() {
+function About() {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
-    <div>
-      <div className="inline-block">
-        <img
-          src={img2}
-          alt="yellow"
-          className="left-0 top-20 transform rotate-12.11 opacity-0.6 absolute"
-        />
-        <img
-          src={img1}
-          alt="Adding notes"
-          className="absolute left-20 top-0 "
-        />
+    <div className="flex justify-around pb-5 items-center h-screen">
+      <div className="inline-block" data-aos="zoom-in">
+        <img src={img2} alt="yellow" />
+        <img src={img1} alt="Adding notes" className="absolute left-20 top-0" />
       </div>
-      <div className=" absolute my-40 mx-40 right-0 inline-block">
-        <p className="leading-10 text-4xl font-sans font-normal">
+      <div className="my-40 mx-40 inline-block">
+        <h1
+          className="leading-10 text-2xl font-sans font-bold "
+          data-aos="fade-left"
+        >
           About E track
-        </p>
-        <p className="text-3xl font-sans font-normal">
+        </h1>
+        <p className="text-xl font-sans font-normal" data-aos="fade-left">
           E-track is an online-customized
           <br />
           bullet journal that allows you to
@@ -29,7 +29,7 @@ export default function About() {
           track and monitor your everyday life.
         </p>
         <br />
-        <p className="text-3xl font-sans font-normal">
+        <p className="text-xl font-sans font-normal" data-aos="fade-left">
           The website shall help you organize
           <br />
           your time and tasks with habits
@@ -40,3 +40,4 @@ export default function About() {
     </div>
   );
 }
+export default About;
