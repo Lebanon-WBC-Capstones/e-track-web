@@ -1,0 +1,11 @@
+{
+        "navbar":{
+            "Home":"Home",
+            "Spread":"Spread",
+            "Trackers":"Trackers",
+            "Interest":"Interest",
+            "Mood": "Mood",
+            "Collections":"Collections",
+            "Profile":"Profile"
+        }
+}

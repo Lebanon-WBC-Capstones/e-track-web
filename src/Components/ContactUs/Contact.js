@@ -1,4 +1,4 @@
-import ContactIMG from '../../Assets/Images/contactIMG.png';
+import ContactIMG from '../../assets/images/contactIMG.png';
 import React, { useState } from 'react';
 import Button from '../button/button';
 
@@ -17,7 +17,7 @@ function Contact() {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gray-100">
       <div className="w-full h-8"></div>
       <div className="font-semibold text-6xl flex justify-center text-gray-700 font-mono">
         Contact Us
