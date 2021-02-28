@@ -57,7 +57,7 @@ function Header() {
         <div className="leading-10 font-bold md:text-center ">
           <span className="text-4xl ">
             {t(`landing.Header1`)}
-            <span className="text-primary"> {t(`landing.Header3`)} </span>
+            <span className="text-primary"> {t(`landing.Header2`)} </span>
           </span>
           <br />
           <span className="text-5xl ">{t(`landing.Header3`)} </span>

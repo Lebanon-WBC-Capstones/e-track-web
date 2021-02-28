@@ -62,6 +62,19 @@
             "TommyRole":"Junior Engineer",
             "AbadName":"Abdellatif Edlby",
             "AbadRole":"Junior Engineer"
+        },
+
+        "contactUs":{
+            "contactUs":"Contact Us",
+            "contactEmail":"Email",
+            "contactSubject":"Subject",
+            "contactMessage":"Message",
+            "contactButton":"Send"
+        },
+
+        "footer":{
+            "footerFollow":"Follow us",
+            "footerRights": "© All rights reserved"
         }
         
 }

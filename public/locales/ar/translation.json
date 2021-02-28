@@ -15,19 +15,19 @@
             "HeaderBottom":"إبدأ من هنا",
             "About1":"حول E-Track",
             "About2":"E-Track هي bullet-journal",
-            "About3":"على الإنترنت، تسمح لك ",
+            "About3":"إلتكترونيّة،  تسمح لك ",
             "About4":"بتنظيم ومراقبة حياتك اليوميّة",
             "About5":"يهدف هذا الموقع إلى مساعدتك",
             "About6":" على تنظيم وقتك ومهامك من هوايات،",
             "About7":"عادات، مناسبات سنوية ومحفوظات.",
             "Dashboard1":"الصّفحة الرئيسيّة",
-            "Dashboard2":"حيثً يمكنك التّحقّق من ",
+            "Dashboard2":"حيث يمكنك التّحقّق من ",
             "Dashboard3":"قائمة مهامك وأهدافك",
             "Tracker1":"عاداتك",
             "Tracker2":"هنا بإمكانك تتبّع نشاطاتك",
             "Tracker3":"اليومية، بالإضافة إلى هواياتك",
             "Mood1":"مزاجك",
-            "Mood2":"وطبعًا، بإمكانك أن تتتبّع مزاجك",
+            "Mood2":"كذلك، يمكنك أن تتتبّع مزاجك",
             "Mood3":"على مدار السّنةأيضًا.",
             "Journal1":"مسيرتك تبدأ",
             "Journal2":"من هنا",
@@ -40,7 +40,7 @@
             "aboutus3":"أهمّ مشروع يمكن لأيّ شخص أن يبتنّاه",
             "aboutus4":"وهو “حياتنا الخاصة”",
             "aboutus5":" لقد سمعتُ عن ال Bullet Journal منذ بضع سنوات،",
-            "aboutus6":"وقد غيّرت حياتي كلّيًا، فقد بدأت بتتبّع جميع",
+            "aboutus6":"وقد غيّرَت حياتي كلّيًا، فقد بدأتُ بتتبّع جميع",
             "aboutus7":"أعمالي اليوميّة، نشاطاتي وهواياتي",
             "aboutus8":"ممّا ساعدني على التحكّم بحياتي بطريقة فعّالة أكثر",
             "aboutus9":"“إنّها لن تقوم فقط بجعلك شخصًا أكثر ",
@@ -52,16 +52,29 @@
         "teamMember":{
             "TeamMembers":"أعضاء الفريق",
             "OsamaName":"أسامة عبد الله",
-            "OsamaRole":"Lead Engineer",
+            "OsamaRole":"المشرف العام",
             "JanaName":"جنى خانجي",
-            "JanaRole":"Junior Engineer",
+            "JanaRole":"عضو مبرمجة ومصمّمة",
             "IbrahimName":"إبراهيم نور",
-            "IbrahimRole":"Junior Engineer",
+            "IbrahimRole":"عضو مبرمج ومصمّم",
             "BassamName":"بسّام إدلبي",
-            "BassamRole":"Junior Engineer",
+            "BassamRole":"عضو مبرمج ومصمّم",
             "TommyName":"تومي شعنين",
-            "TommyRole":"Junior Engineer",
+            "TommyRole":"عضو مبرمج ومصمّم",
             "AbadName":"عبد اللطيف إدلبي",
-            "AbadRole":"Junior Engineer"
+            "AbadRole":"عضو مبرمج ومصمّم"
+        },
+
+        "contactUs":{
+            "contactUs":"إتّصل بنا",
+            "contactEmail":"البريد الخاص",
+            "contactSubject":"الموضوع",
+            "contactMessage":"الرسالة",
+            "contactButton":"إرسال"
+        },
+
+        "footer":{
+            "footerFollow":"تابعنا على : ",
+            "footerRights": "© جميع الحقوق محفوظة"
         }
 }
