@@ -6,6 +6,62 @@
             "Interest":"إهتمامات",
             "Mood":"المزاج",
             "Collections":"محفوضات",
-            "Settings":"الإعدادات"
+            "Profile":"الإعدادات"
+        },
+        "landing":{
+            "Header1":" حياتك هي اكبر ",
+            "Header2":"مشروع لك",
+            "Header3":"تتبّعها بالطريقة الصحيحة",
+            "HeaderBottom":"إبدأ من هنا",
+            "About1":"حول E-Track",
+            "About2":"E-Track هي bullet-journal",
+            "About3":"على الإنترنت، تسمح لك ",
+            "About4":"بتنظيم ومراقبة حياتك اليوميّة",
+            "About5":"يهدف هذا الموقع إلى مساعدتك",
+            "About6":" على تنظيم وقتك ومهامك من هوايات،",
+            "About7":"عادات، مناسبات سنوية ومحفوظات.",
+            "Dashboard1":"الصّفحة الرئيسيّة",
+            "Dashboard2":"حيثً يمكنك التّحقّق من ",
+            "Dashboard3":"قائمة مهامك وأهدافك",
+            "Tracker1":"عاداتك",
+            "Tracker2":"هنا بإمكانك تتبّع نشاطاتك",
+            "Tracker3":"اليومية، بالإضافة إلى هواياتك",
+            "Mood1":"مزاجك",
+            "Mood2":"وطبعًا، بإمكانك أن تتتبّع مزاجك",
+            "Mood3":"على مدار السّنةأيضًا.",
+            "Journal1":"مسيرتك تبدأ",
+            "Journal2":"من هنا",
+            "JournalBottom":"إبدأ الآن"
+        },
+
+        "aboutus":{
+            "aboutus1":"مشروعنا",
+            "aboutus2":"يتمحور هدفنا الأساسي إلى تنظينم وإدارة ",
+            "aboutus3":"أهمّ مشروع يمكن لأيّ شخص أن يبتنّاه",
+            "aboutus4":"وهو “حياتنا الخاصة”",
+            "aboutus5":" لقد سمعتُ عن ال Bullet Journal منذ بضع سنوات،",
+            "aboutus6":"وقد غيّرت حياتي كلّيًا، فقد بدأت بتتبّع جميع",
+            "aboutus7":"أعمالي اليوميّة، نشاطاتي وهواياتي",
+            "aboutus8":"ممّا ساعدني على التحكّم بحياتي بطريقة فعّالة أكثر",
+            "aboutus9":"“إنّها لن تقوم فقط بجعلك شخصًا أكثر ",
+            "aboutus10":"“تنظيمًا، بل ستقوم كذلك بجعلك",
+            "aboutus11":"شخصًا أفضل”",
+            "aboutus12":" – Cal Newport, author of Deep Work"  
+        },
+
+        "teamMember":{
+            "TeamMembers":"أعضاء الفريق",
+            "OsamaName":"أسامة عبد الله",
+            "OsamaRole":"Lead Engineer",
+            "JanaName":"جنى خانجي",
+            "JanaRole":"Junior Engineer",
+            "IbrahimName":"إبراهيم نور",
+            "IbrahimRole":"Junior Engineer",
+            "BassamName":"بسّام إدلبي",
+            "BassamRole":"Junior Engineer",
+            "TommyName":"تومي شعنين",
+            "TommyRole":"Junior Engineer",
+            "AbadName":"عبد اللطيف إدلبي",
+            "AbadRole":"Junior Engineer"
         }
 }

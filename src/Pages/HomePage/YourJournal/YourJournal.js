@@ -5,8 +5,14 @@ import Button from '../../../Components/button/button';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import '../../../App.css';
+import { useTranslation } from 'react-i18next';
 
 export default function YourJournal() {
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
+
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
@@ -17,7 +23,8 @@ export default function YourJournal() {
           className="text-center text-2xl font-bold font-sans mb-3 "
           data-aos="fade-up"
         >
-          your journal begins <br /> with a click
+          {t(`landing.Journal1`)} <br />
+          {t(`landing.Journal2`)}
         </p>
       </div>
       <div className="flex justify-center" data-aos="zoom-in">
@@ -25,7 +32,7 @@ export default function YourJournal() {
           onClick={() => {
             alert('Hello!');
           }}
-          text={'Get started'}
+          text={t(`landing.JournalBottom`)}
         />
       </div>
       <div className="flex justify-around pb-5 items-center flex-wrap">
@@ -35,12 +42,12 @@ export default function YourJournal() {
           className="w-1/2 h-auto"
           data-aos="zoom-in"
         />
-        <img
+        {/*<img
           src={Objects}
           alt="Objects"
           className="w-1/4 h-auto"
           data-aos="zoom-in"
-        />
+       />*/}
       </div>
     </div>
   );
