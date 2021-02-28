@@ -17,7 +17,7 @@ function Contact() {
   };
 
   return (
-    <div className="bg-gray-100 ">
+    <div className="bg-gray-100">
       <div className="w-full h-8"></div>
       <div className="font-semibold text-6xl flex justify-center text-gray-700 font-mono">
         Contact Us

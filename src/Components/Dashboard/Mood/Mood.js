@@ -1,7 +1,7 @@
 import moodElements from './../../../Constants/moodElements.js';
 function Mood() {
   return (
-    <div className="bg-white text-Grey rounded-xl shadow-md p-3 min-w-min text-center">
+    <div className="bg-white text-Grey rounded-xl shadow-md p-3 min-w-min text-center cursor-pointer">
       <h1 className="font-medium text-Grey text-base pb-2">
         How are you feeling today?
       </h1>

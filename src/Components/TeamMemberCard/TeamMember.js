@@ -1,8 +1,8 @@
-import empty from '../../../assets/images/empty.png';
-import bassam from '../../../assets/images/bassam.png';
-import jana from '../../../assets/images/jana.png';
-import osama from '../../../assets/images/osama.png';
-import ibrahim from '../../../assets/images/ibrahim.png';
+import empty from '../../assets/images/empty.png';
+import bassam from '../../assets/images/bassam.png';
+import jana from '../../assets/images/jana.png';
+import osama from '../../assets/images/osama.png';
+import ibrahim from '../../assets/images/ibrahim.png';
 
 const card = [
   {
