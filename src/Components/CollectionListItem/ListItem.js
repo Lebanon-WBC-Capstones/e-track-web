@@ -1,17 +1,19 @@
 import React from 'react';
+import collection from '../../Constants/collection.js';
 
-function ListItem({ text, number, color }) {
+function CollectionListItem({ number, type }) {
+  const collectionType = collection.find(
+    (collection) => collection.id === type.id
+  );
   return (
     <div className=" flex justify-between border-b-2 w-auto ">
-      <div className=" m-2 ">{text}</div>
+      <div className=" m-2 ">{collectionType.name}</div>
       <div
-        style={{ backgroundColor: color }}
-        className="m-2 w-6 rounded-full object-center"
+        className={`  m-2 w-6 rounded-full flex justify-center items-center bg-${collectionType.color}`}
       >
-        {' '}
-        {number}{' '}
+        {number}
       </div>
     </div>
   );
 }
-export default ListItem;
+export default CollectionListItem;
