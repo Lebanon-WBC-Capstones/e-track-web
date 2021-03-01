@@ -5,18 +5,19 @@ import Button from '../../../Components/button/button';
 import LandingPage from '../../LandingPage/LandingPage';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
+import { Link, Router, Switch } from 'react-router-dom';
 
 function Header() {
-  const [lan, setLan] = useState('English');
+  const [lan, setLan] = useState('En');
   const { t, i18n } = useTranslation();
   const changeLanguage = (language) => {
-    if (lan === 'English') {
-      setLan('عربي');
+    if (lan === 'En') {
+      setLan('Ar');
       i18n.changeLanguage(language);
       console.log(lan);
       console.log(i18next.language);
     } else {
-      setLan('English');
+      setLan('En');
       i18n.changeLanguage(language);
     }
   };
@@ -36,20 +37,30 @@ function Header() {
       />
       {/*button to translate*/}
 
-      <div className="w-52 h-14 absolute top-5 right-72">
-        <Button
-          text={lan}
+      <div className="w-52 h-14  top-5 right-72">
+        <button
+          type="button"
+          className="absolute"
           onClick={() => {
-            if (lan === 'English') {
+            if (lan === 'En') {
               changeLanguage('en');
             } else {
               changeLanguage('ar');
             }
           }}
-        />
+        >
+          {lan}
+        </button>
       </div>
 
-      <div className="w-52 h-14 absolute top-5 right-5">
+      <div></div>
+      <div className="w-52 h-14 absolute ">
+        <Link to="/about">
+          <Button text="About" />
+        </Link>
+      </div>
+
+      <div className="w-52 h-14 absolute top-20">
         <Button text="Get Started" />
       </div>
 
