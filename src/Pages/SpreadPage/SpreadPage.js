@@ -47,7 +47,6 @@ function SpreadPage() {
         ),
       ],
     });
-    console.log(monthEvents);
     setShowModal(true);
   }
 
