@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Logo from '../../../assets/images/Logo.png';
 import img1 from '../../../assets/images/img1.png';
+import languagePic from '../../../assets/images/languagePic.png';
+
 import Button from '../../../Components/button/button';
 import LandingPage from '../../LandingPage/LandingPage';
 import { useTranslation } from 'react-i18next';
@@ -37,10 +39,10 @@ function Header() {
       />
       {/*button to translate*/}
 
-      <div className="  absolute top-4 right-60 ">
-        <button
-          type="button"
-          className="absolute bg-gray-400 rounded-full p-1 font-bold hover:text-white "
+      <div className="">
+        <img
+          src={languagePic}
+          className="absolute p-1 w-12 top-8 right-80 cursor-pointer"
           onClick={() => {
             if (lan === 'En') {
               changeLanguage('en');
@@ -48,18 +50,18 @@ function Header() {
               changeLanguage('ar');
             }
           }}
-        >
-          {lan}
-        </button>
+        />
       </div>
 
-      <div className="  absolute top-20 right-12 ">
+      <div className="  absolute top-7 right-48 ">
         <Link to="/about">
-          <Button text={t(`landing.HeaderBtnAbout`)} />
+          <button className="shadow-md  hover:text-primary text-white font-bold py-3 px-7 rounded-full">
+            {t(`landing.HeaderBtnAbout`)}
+          </button>
         </Link>
       </div>
 
-      <div className=" absolute top-2 right-12">
+      <div className=" absolute top-7 right-12 ">
         <Button text={t(`landing.HeaderBtnStarted`)} />
       </div>
 
