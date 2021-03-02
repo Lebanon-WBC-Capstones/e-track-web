@@ -2,7 +2,10 @@ import { useTranslation } from 'react-i18next';
 import LandingPage from './Pages/LandingPage/LandingPage.js';
 import AboutUs from './Pages/AboutPage/AboutUs.js';
 import NotFound from './Pages/NotFound/NotFound.js';
+<<<<<<< HEAD
 import CollectionCardModal from './Components/CollectionCard/CollectionCardModal.js'
+=======
+>>>>>>> 83e1e1a1c0153cbbd4c3a0a84b2bc6e4501776a9
 
 import CollectionPage from './Pages/CollectionPage/CollectionPage.js';
 import InterestPage from './Pages/InterestPage/InterestPage.js';
