@@ -2,7 +2,7 @@ import React from 'react';
 import Bin from '../../assets/icons/Bin.png';
 import Tag from '../../assets/icons/price-tag 1.png';
 import Star from '../../assets/icons/Star1.png';
-import Filledstar from '../../assets/icons/Star.png';
+import FullStar from '../../assets/icons/Star.png';
 import Close from '../../assets/icons/Close.png';
 import Img from '../../assets/icons/image 22.png';
 import collection from '../../Constants/collection.js';
@@ -40,7 +40,7 @@ export default function CollectionCardModal({ card, setShowModal }) {
                         type="button"
                         style={{ transition: "all .15s ease" }}
                        >
-                        {<img src={card.starred? FilledStar:Star} alt="star" />}
+                        {<img src={card.starred? FullStar:Star} alt="star" />}
                        </button>
 
                       <button
