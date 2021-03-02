@@ -37,10 +37,10 @@ function Header() {
       />
       {/*button to translate*/}
 
-      <div className="w-52 h-14  top-5 right-72">
+      <div className="  absolute top-4 right-60 ">
         <button
           type="button"
-          className="absolute"
+          className="absolute bg-gray-400 rounded-full p-1 font-bold hover:text-white "
           onClick={() => {
             if (lan === 'En') {
               changeLanguage('en');
@@ -53,15 +53,14 @@ function Header() {
         </button>
       </div>
 
-      <div></div>
-      <div className="w-52 h-14 absolute ">
+      <div className="  absolute top-20 right-12 ">
         <Link to="/about">
-          <Button text="About" />
+          <Button text={t(`landing.HeaderBtnAbout`)} />
         </Link>
       </div>
 
-      <div className="w-52 h-14 absolute top-20">
-        <Button text="Get Started" />
+      <div className=" absolute top-2 right-12">
+        <Button text={t(`landing.HeaderBtnStarted`)} />
       </div>
 
       <div className="absolute top-1/3 right-2/4 h-60">
@@ -75,7 +74,7 @@ function Header() {
         </div>
         <div className="absolute bottom-0 w-full">
           <div className="flex justify-center">
-            <Button text={t(`landing.HeaderBottom`)} />
+            <Button text={t(`landing.HeaderButton`)} />
           </div>
         </div>
       </div>
