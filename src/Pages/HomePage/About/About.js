@@ -3,8 +3,10 @@ import img1 from '../../../assets/images/Add notes-cuate 1.png';
 import img2 from '../../../assets/images/Good team-rafiki 5.png';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import { useTranslation } from 'react-i18next';
 
 function About() {
+  const { t, i18n } = useTranslation();
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
@@ -19,22 +21,22 @@ function About() {
           className="leading-10 text-2xl font-sans font-bold "
           data-aos="fade-left"
         >
-          About E track
+          {t(`landing.About1`)}
         </h1>
         <p className="text-xl font-sans font-normal" data-aos="fade-left">
-          E-track is an online-customized
+          {t(`landing.About2`)}
           <br />
-          bullet journal that allows you to
+          {t(`landing.About3`)}
           <br />
-          track and monitor your everyday life.
+          {t(`landing.About4`)}
         </p>
         <br />
         <p className="text-xl font-sans font-normal" data-aos="fade-left">
-          The website shall help you organize
+          {t(`landing.About5`)}
           <br />
-          your time and tasks with habits
+          {t(`landing.About6`)}
           <br />
-          trackers, spreads and collections.
+          {t(`landing.About7`)}
         </p>
       </div>
     </div>
