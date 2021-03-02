@@ -2,14 +2,16 @@ import React from 'react';
 import Bin from '../../assets/icons/Bin.png';
 import Tag from '../../assets/icons/price-tag 1.png';
 import Star from '../../assets/icons/Star1.png';
+import FilledStar from '../../assets/icons/Star.png';
 import Close from '../../assets/icons/Close.png';
 import Img from '../../assets/icons/image 22.png';
+import collection from '../../Constants/collection.js';
 
-export default function CollectionCardModal({ card, type }) {
-        
+export default function CollectionCardModal({ card, setShowModal }) {
+  const type = collection.find((el) => el.id===card.type.id)
       return (
-        <>
-           <>
+        
+           <div>
               <div
                 className="justify-center modal items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
               >
@@ -20,11 +22,11 @@ export default function CollectionCardModal({ card, type }) {
                         
                         {card.date}
                       </h3> 
-                      <h5 className="text-1xl font-light my-1">Memories
+                      <h5 className="text-1xl font-light my-1">
                       {type.name}
                       </h5>                                                
                        <p className="my-4 text-gray-600 text-lg leading-relaxed font-semibold">
-                     Today was a great day, we went there and we had so much fun doing that. 
+                      
                      {card.text}
 
                       </p>
@@ -38,7 +40,7 @@ export default function CollectionCardModal({ card, type }) {
                         type="button"
                         style={{ transition: "all .15s ease" }}
                        >
-                        {<img src={Star} alt="star" />}
+                        {<img src={card.starred? FilledStar:Star} alt="star" />}
                        </button>
 
                       <button
@@ -71,7 +73,7 @@ export default function CollectionCardModal({ card, type }) {
                         className="background-transparent font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
                         type="button"
                         style={{ transition: "all .15s ease" }}
-                        //onClick={() => setShowModal(false)}
+                        onClick={() => setShowModal(false)}
                       >
                         {<img src={Close} alt="close" />}
                       </button>
@@ -81,8 +83,8 @@ export default function CollectionCardModal({ card, type }) {
                 </div>
               </div>
               <div className="opacity-25 fixed inset-0 z-40 bg-gray-300"></div>
-            </>
+            </div>
           
-        </>
+        
       );
     }
