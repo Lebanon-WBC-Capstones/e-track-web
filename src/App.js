@@ -10,7 +10,6 @@ import SpreadPage from './Pages/SpreadPage/SpreadPage.js';
 import MoodPage from './Pages/MoodPage/MoodPage.js';
 import TrackerPage from './Pages/TrackerPage/TrackerPage.js';
 import ProfilePage from './Pages/ProfilePage/ProfilePage.js';
-import NoTrack from './Pages/NoTrack/noTrack.js';
 
 import Navbar from './Components/Navbar/Navbar.js';
 
@@ -29,9 +28,7 @@ function App() {
           <Route path="/" exact>
             <LandingPage />
           </Route>
-          <Route path="/notrack" exact>
-            <NoTrack />
-          </Route>
+
           {signedin ? (
             <div className="bg-lightGrey h-screen">
               <Navbar />
