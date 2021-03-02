@@ -1,5 +1,6 @@
 export const profile = {
   id: '4ad3fe1b-d179-417d-9927-4b38bbf23e76',
+  email: 'jana.khanji@ieee.org',
   name: 'Jana Khanji',
   Avatar: '',
   occupation: 'Web Developer',
@@ -40,7 +41,7 @@ export const trackers = [
     title: 'brush my teeth',
     duration: 14,
     StartDate: 'Sat Feb 20 2021',
-    completed: false,
+    completed: true,
     track: [
       { id: 1, status: 'checked', date: 'Sat Feb 20 2021' },
       { id: 2, status: 'unchecked', date: 'Sun Feb 21 2021' },
@@ -63,7 +64,7 @@ export const trackers = [
     title: 'sport',
     duration: 7,
     StartDate: 'Sun Feb 28 2021',
-    completed: false,
+    completed: true,
     track: [
       { id: 1, status: 'checked', date: 'Sun Feb 28 2021' },
       { id: 2, status: 'unchecked', date: 'Sun Feb 28 2021' },
