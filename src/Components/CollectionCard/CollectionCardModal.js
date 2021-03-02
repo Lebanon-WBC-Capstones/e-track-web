@@ -2,7 +2,7 @@ import React from 'react';
 import Bin from '../../assets/icons/Bin.png';
 import Tag from '../../assets/icons/price-tag 1.png';
 import Star from '../../assets/icons/Star1.png';
-import FilledStar from '../../assets/icons/Star.png';
+import Filledstar from '../../assets/icons/Star.png';
 import Close from '../../assets/icons/Close.png';
 import Img from '../../assets/icons/image 22.png';
 import collection from '../../Constants/collection.js';
