@@ -78,16 +78,44 @@ export const trackers = [
 
 export const collection = [
   {
-    date: 'Date',
+    date: 'Sun Feb 28 2021',
     type: { id: 5 },
     text: 'today was a great day, we had so mush fun, yeaaaa',
     img: '',
     starred: true,
   },
   {
-    date: 'Date',
-    type: { id: 5 },
-    text: 'I just waant to die XD',
+    date: 'Sun Feb 28 2021',
+    type: { id: 3 },
+    text: 'I just want to die XD',
+    img: '',
+    starred: false,
+  },
+  {
+    date: 'Sun Feb 28 2021',
+    type: { id: 3 },
+    text: 'I just want to die XD',
+    img: '',
+    starred: false,
+  },
+  {
+    date: 'Sun Feb 28 2021',
+    type: { id: 2 },
+    text: 'I just want to die XD',
+    img: '',
+    starred: false,
+  },
+  {
+    date: 'Sun Feb 28 2021',
+    type: { id: 4 },
+    text: 'I just want to die XD',
+    img: '',
+    starred: true,
+  },
+  {
+    date: 'Sun Feb 28 2021',
+    type: { id: 1 },
+    text: 'I just want to die XD',
     img: '',
     starred: false,
   },
