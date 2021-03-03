@@ -3,8 +3,8 @@ import Profile from '../../Components/Dashboard/Profile/Profile.js';
 import CalendarComp from '../../Components/Calendar/calendar.js';
 import TodoList from '../../Components/Dashboard/TodoList/Todolist.js';
 import Progress from '../../Components/Dashboard/Progress/Progress.js';
-import Mood from '../../Components/Dashboard/Mood/Mood.js';
-import Tracker from '../../Components/Dashboard/Tracker/Tracker.js';
+//import Mood from '../../Components/Dashboard/Mood/Mood.js';
+//import Tracker from '../../Components/Dashboard/Tracker/Tracker.js';
 
 // Data
 import { profile, events, trackers, interest } from '../../data.js';
@@ -42,15 +42,15 @@ function DashboardPage() {
         <TodoList />
       </div>
       <div className="sm:w-full md:w-full lg:w-1/5 flex flex-col justify-between">
-        <div className="p-2">
+        {/*<div className="p-2">
           <Mood />
-        </div>
+        </div>*/}
         <div className="p-2">
           <Progress goal={goal} />
         </div>
-        <div className="p-2">
+        {/*<div className="p-2">
           <Tracker tracker={tracker} />
-        </div>
+      </div>*/}
       </div>
     </div>
   );

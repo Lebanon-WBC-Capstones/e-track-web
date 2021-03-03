@@ -1,15 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import LandingPage from './Pages/LandingPage/LandingPage.js';
-import AboutUs from './Pages/AboutPage/OurProject/AboutUs.js';
+import AboutUs from './Pages/AboutPage/AboutUs.js';
 import NotFound from './Pages/NotFound/NotFound.js';
-
 
 import CollectionPage from './Pages/CollectionPage/CollectionPage.js';
 import InterestPage from './Pages/InterestPage/InterestPage.js';
 import Dashboard from './Pages/DashboardPage/DashboardPage.js';
 import SpreadPage from './Pages/SpreadPage/SpreadPage.js';
 import MoodPage from './Pages/MoodPage/MoodPage.js';
-import TrackerPage from './Pages/TrackerPage/TrackerPage.js';
+//import TrackerPage from './Pages/TrackerPage/TrackerPage.js';
 import ProfilePage from './Pages/ProfilePage/ProfilePage.js';
 
 import Navbar from './Components/Navbar/Navbar.js';
@@ -38,9 +37,9 @@ function App() {
               <Route path="/profile" exact>
                 <ProfilePage />
               </Route>
-              <Route path="/trackers" exact>
+              {/* <Route path="/trackers" exact>
                 <TrackerPage />
-              </Route>
+          </Route> */}
               <Route path="/Mood" exact>
                 <MoodPage />
               </Route>
