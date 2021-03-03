@@ -25,7 +25,7 @@ function Contact() {
         {t(`contactUs.contactUs`)}
       </div>
       <div className="w-full h-28"></div>
-      <div className="flex justify-center space-x-24 > * ">
+      <div className="flex justify-center space-x-24 > *">
         <div className="">
           <form>
             <input
