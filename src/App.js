@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import LandingPage from './Pages/LandingPage/LandingPage.js';
 import AboutUs from './Pages/AboutPage/AboutUs.js';
 import NotFound from './Pages/NotFound/NotFound.js';
@@ -28,6 +27,7 @@ function App() {
           <Route path="/" exact>
             <LandingPage />
           </Route>
+
           {signedin ? (
             <div className="bg-lightGrey h-screen">
               <Navbar />
