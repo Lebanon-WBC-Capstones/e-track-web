@@ -28,6 +28,7 @@ function App() {
           <Route path="/" exact>
             <LandingPage />
           </Route>
+
           {signedin ? (
             <div className="bg-lightGrey h-screen">
               <Navbar />
