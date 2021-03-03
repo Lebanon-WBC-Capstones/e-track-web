@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import DataPoints from '../../../assets/images/Data points-pana 1.png';
-import Objects from '../../../assets/images/OBJECTS.png';
+
 import Button from '../../../Components/button/button';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -8,10 +8,7 @@ import '../../../App.css';
 import { useTranslation } from 'react-i18next';
 
 export default function YourJournal() {
-  const { t, i18n } = useTranslation();
-  const changeLanguage = (language) => {
-    i18n.changeLanguage(language);
-  };
+  const { t } = useTranslation();
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
