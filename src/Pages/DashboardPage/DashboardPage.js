@@ -9,7 +9,7 @@ import { useContext } from 'react';
 import { StateContext } from '../../StateProvider.js';
 
 function DashboardPage() {
-  const [state, dispatch] = useContext(StateContext);
+  const [state] = useContext(StateContext);
 
   function CalendarFct(date) {
     return date.toDateString() === new Date().toDateString() ? 'today' : null;
@@ -19,7 +19,7 @@ function DashboardPage() {
   const goal = state.interest.filter((el) => !el.completed)[0];
 
   return (
-    <div className="flex flex-wrap h-5/6 justify-items-center mx-9 my-7">
+    <div className="flex flex-wrap h-5/6 justify-center mx-9 my-7">
       <div className="sm:w-full md:w-full lg:w-1/5 flex flex-col justify-between">
         <div className="p-2">
           <Profile profile={state.profile} />

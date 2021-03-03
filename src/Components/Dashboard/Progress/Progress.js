@@ -3,7 +3,6 @@ import ProgressBar from './../../ProgressBar/ProgressBar.js';
 import Addnew from '../../../assets/images/Addnew.png';
 
 function Progress({ goal }) {
-  console.log(goal);
   return (
     <div className="bg-white rounded-xl shadow-md p-3 h-full">
       <h2 className="font-medium text-red-500 text-center pb-3">Progress</h2>

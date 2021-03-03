@@ -1,6 +1,18 @@
 import EventsType from '../../Constants/EventsType.js';
+import bin from '../../assets/images/delete.png';
+import { StateContext } from '../../StateProvider.js';
+import { useState, useContext } from 'react';
 
 export default function EventsModal({ setShowModal, monthEvents }) {
+  const [Events, setEvents] = useState([...monthEvents.events]);
+  const [state, dispatch] = useContext(StateContext);
+
+  function deleteEvent(id) {
+    let newData = state.events.filter((el) => el.id != id);
+    dispatch({ type: 'SET_EVENTS', payload: newData });
+    setEvents(monthEvents.events.filter((el) => el.id != id));
+  }
+
   return (
     <>
       <div
@@ -14,9 +26,12 @@ export default function EventsModal({ setShowModal, monthEvents }) {
                 {monthEvents.month}
               </h2>
               <p>Events</p>
-              {monthEvents.events.map((el) => {
+              {Events.map((el) => {
                 return (
-                  <div className="shadow-sm w-100 flex items-center justify-between py-3 px-20 w-full">
+                  <div
+                    className="shadow-sm w-100 flex items-center justify-between py-3 px-20 w-full"
+                    key={el.id}
+                  >
                     <div>
                       <h2
                         className="font-medium text-center pb-3 text-xl leading-none"
@@ -28,11 +43,19 @@ export default function EventsModal({ setShowModal, monthEvents }) {
                       >
                         {el.title}
                       </h2>
-                      <p class="text-gray-400 text-sm">{el.description}</p>
+                      <p className="text-gray-400 text-sm">{el.description}</p>
                     </div>
-                    <h2 className="font-medium text-red-500 text-center pb-3 leading-none">
-                      {el.date.split(' ').slice(1, 3).join(' ')}
-                    </h2>
+                    <div className="flex">
+                      <h2 className="font-medium text-red-500 text-center pb-3 leading-none">
+                        {el.date.split(' ').slice(1, 3).join(' ')}
+                      </h2>
+                      <img
+                        className="h-5 w-5 ml-5 cursor-pointer"
+                        src={bin}
+                        alt="options"
+                        onClick={() => deleteEvent(el.id)}
+                      />
+                    </div>
                   </div>
                 );
               })}

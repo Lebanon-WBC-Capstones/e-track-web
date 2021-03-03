@@ -3,13 +3,17 @@
 import EventsType from '../../Constants/EventsType.js';
 import Button from '../../Components/button/button.js';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useContext } from 'react';
+import { StateContext } from '../../StateProvider.js';
 
 export default function EventForm({ setShowForm }) {
+  const [state, dispatch] = useContext(StateContext);
+
   const title = useRef(null);
   const description = useRef(null);
   const date = useRef(null);
   const [type, setType] = useState(0);
+
   function AddEvent(e) {
     e.preventDefault();
     let obj = {
@@ -17,9 +21,12 @@ export default function EventForm({ setShowForm }) {
       title: title.current.value,
       description: description.current.value,
       date: new Date(date.current.value).toDateString(),
-      type: type,
+      type_id: type,
     };
-    console.log(obj);
+
+    let newData = [...state.events, obj];
+    dispatch({ type: 'SET_EVENTS', payload: newData });
+    setShowForm(false);
   }
   return (
     <>
@@ -67,7 +74,9 @@ export default function EventForm({ setShowForm }) {
                   <p>Event Type:</p>
                   {EventsType.map((el) => {
                     return (
-                      el.gender === 'all' && (
+                      (state.profile.gender === 'female'
+                        ? true
+                        : el.gender === 'all') && (
                         <label
                           key={el.id}
                           class="flex flex-col items-center mt-3 justify-center justify-items-center content-center"

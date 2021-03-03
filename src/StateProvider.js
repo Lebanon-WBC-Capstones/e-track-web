@@ -6,7 +6,6 @@ const initialState = {
     id: '4ad3fe1b-d179-417d-9927-4b38bbf23e76',
     name: 'Jana Khanji',
     Avatar: '',
-    occupation: 'Web Developer',
     language: 'en_US',
     gender: 'female',
     birthday: {
@@ -38,6 +37,27 @@ const initialState = {
       type_id: 1,
       date: 'Tue Mar 02 2021',
     },
+    {
+      id: 5,
+      title: 'testing',
+      description: 'string',
+      type_id: 1,
+      date: 'Wed Sep 01 2021',
+    },
+    {
+      id: 6,
+      title: 'testing',
+      description: 'string',
+      type_id: 2,
+      date: 'Thu Sep 02 2021',
+    },
+    {
+      id: 7,
+      title: 'testing',
+      description: 'string',
+      type_id: 2,
+      date: 'Thu Sep 02 2021',
+    },
   ],
   trackers: [
     {
@@ -56,15 +76,15 @@ const initialState = {
         { id: 7, status: 'checked', date: 'Fri Feb 26 2021' },
         { id: 8, status: 'notYet', date: 'Sat Feb 27 2021' },
         { id: 9, status: 'notYet', date: 'Sun Feb 28 2021' },
-        { id: 10, status: 'notYet', date: 'Mon Mar 1 2021' },
-        { id: 11, status: 'notYet', date: 'Tue Feb 2 2021' },
-        { id: 12, status: 'notYet', date: 'Wed Feb 3 2021' },
-        { id: 13, status: 'notYet', date: 'Thu Feb 4 2021' },
-        { id: 14, status: 'notYet', date: 'Fri Feb 5 2021' },
+        { id: 10, status: 'notYet', date: 'Mon Mar 01 2021' },
+        { id: 11, status: 'notYet', date: 'Tue Feb 02 2021' },
+        { id: 12, status: 'notYet', date: 'Wed Feb 03 2021' },
+        { id: 13, status: 'notYet', date: 'Thu Feb 04 2021' },
+        { id: 14, status: 'notYet', date: 'Fri Feb 05 2021' },
       ],
     },
   ],
-  collection: [
+  collections: [
     {
       date: 'Date',
       type: { id: 5 },
