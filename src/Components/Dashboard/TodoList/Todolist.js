@@ -20,7 +20,7 @@ function TodoList() {
     } else {
       localStorage.setItem('Todolist', JSON.stringify(Todolist));
     }
-  }, []);
+  }, [Todolist]);
 
   useEffect(() => {
     localStorage.setItem('Todolist', JSON.stringify(Todolist));

@@ -41,6 +41,7 @@ function Header() {
       <div className="">
         <img
           src={languagePic}
+          alt="translate"
           className="absolute p-1 w-12 top-8 right-80 cursor-pointer"
           onClick={() => {
             if (lan === 'En') {
