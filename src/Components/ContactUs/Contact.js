@@ -4,7 +4,7 @@ import Button from '../button/button';
 import { useTranslation } from 'react-i18next';
 
 function Contact() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [field, setField] = useState({
     email: '',
     subject: '',

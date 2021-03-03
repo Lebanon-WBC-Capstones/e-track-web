@@ -4,10 +4,9 @@ import img1 from '../../../assets/images/img1.png';
 import languagePic from '../../../assets/images/languagePic.png';
 
 import Button from '../../../Components/button/button';
-import LandingPage from '../../LandingPage/LandingPage';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
-import { Link, Router, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Header() {
   const [lan, setLan] = useState('En');
@@ -34,7 +33,7 @@ function Header() {
       <img
         src={img1}
         className="absolute top-0 right-0 w-6/12"
-        alt="background image"
+        alt="background"
         width="900"
       />
       {/*button to translate*/}
@@ -42,6 +41,7 @@ function Header() {
       <div className="">
         <img
           src={languagePic}
+          alt="translate"
           className="absolute p-1 w-12 top-8 right-80 cursor-pointer"
           onClick={() => {
             if (lan === 'En') {

@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import LandingPage from './Pages/LandingPage/LandingPage.js';
 import AboutUs from './Pages/AboutPage/AboutUs.js';
 import NotFound from './Pages/NotFound/NotFound.js';
