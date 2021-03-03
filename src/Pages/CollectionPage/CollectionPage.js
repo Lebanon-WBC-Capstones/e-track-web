@@ -29,7 +29,6 @@ function CollectionPage() {
         />
 
         <div className="grid grid-cols-4  ">
-          {' '}
           {collection.map((el) => {
             return <CollectionCard card={el} />;
           })}
