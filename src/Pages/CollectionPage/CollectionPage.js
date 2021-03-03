@@ -1,12 +1,13 @@
 import CollectionListItem from '../../Components/CollectionListItem/ListItem.js';
 import bro from '../../assets/images/bro.png';
-import { collection } from '../../data.js';
+import { collections } from '../../data.js';
+import collection from '../../Constants/collection.js';
 import CollectionCard from '../../Components/CollectionCard/CollectionCard.js';
 import FloatingBtn from '../../Components/floatingBtn/floatingBtn.js';
 
 function CollectionPage() {
   return (
-    <div className="flex h-full bg-lightGrey">
+    <div className="flex h-5/6 bg-lightGrey">
       <div className="h-5/6">
         <div className="bg-white rounded-xl shadow-md  w-96 h-full px-12 mt-6 mx-8">
           <div className="flex justify-center font-bold text-2xl p-6">
@@ -14,10 +15,13 @@ function CollectionPage() {
           </div>
 
           {collection.map((el) => {
-            return <CollectionListItem number="2" type={el.type} />;
+            return <CollectionListItem number="2" type={{ id: el.id }} />;
           })}
+          <div className="h-6"></div>
 
-          <img className="absolute left-20 bottom-20" src={bro} />
+          <div className="flex h-1/2 items-end">
+            <img src={bro} />
+          </div>
         </div>
       </div>
 
@@ -29,7 +33,7 @@ function CollectionPage() {
         />
 
         <div className="grid grid-cols-4  ">
-          {collection.map((el) => {
+          {collections.map((el) => {
             return <CollectionCard card={el} />;
           })}
         </div>

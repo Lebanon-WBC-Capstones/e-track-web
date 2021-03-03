@@ -76,7 +76,7 @@ export const trackers = [
   },
 ];
 
-export const collection = [
+export const collections = [
   {
     date: 'Sun Feb 28 2021',
     type: { id: 5 },
