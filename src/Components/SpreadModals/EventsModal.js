@@ -8,9 +8,9 @@ export default function EventsModal({ setShowModal, monthEvents }) {
   const [state, dispatch] = useContext(StateContext);
 
   function deleteEvent(id) {
-    let newData = state.events.filter((el) => el.id != id);
+    let newData = state.events.filter((el) => el.id !== id);
     dispatch({ type: 'SET_EVENTS', payload: newData });
-    setEvents(monthEvents.events.filter((el) => el.id != id));
+    setEvents(monthEvents.events.filter((el) => el.id !== id));
   }
 
   return (
@@ -66,7 +66,6 @@ export default function EventsModal({ setShowModal, monthEvents }) {
                 type="button"
                 onClick={() => setShowModal(false)}
               >
-                {' '}
                 x
               </button>
             </div>

@@ -16,14 +16,16 @@ export default function EventForm({ setShowForm }) {
 
   function AddEvent(e) {
     e.preventDefault();
+
     let obj = {
       id: new Date().getTime(),
-      title: title.current.value,
+      // title: title.current.value,
+      title: 'test',
       description: description.current.value,
       date: new Date(date.current.value).toDateString(),
       type_id: type,
     };
-
+    console.log(obj);
     let newData = [...state.events, obj];
     dispatch({ type: 'SET_EVENTS', payload: newData });
     setShowForm(false);
@@ -40,15 +42,15 @@ export default function EventForm({ setShowForm }) {
               <h2 className="font-medium text-center pb-3 text-xl">
                 Add new Event
               </h2>
-              <form>
+              <form onSubmit={AddEvent}>
                 <div className="mb-4">
                   <input
-                    required
-                    ref={title}
+                    //ref={title}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     name="title"
                     type="text"
                     placeholder="Event name"
+                    required
                   />
                 </div>
                 <div className="mb-4">
@@ -96,7 +98,11 @@ export default function EventForm({ setShowForm }) {
                   })}
                 </div>
                 <div className="p-5 pb-0">
-                  <Button text="Add Event" onClick={AddEvent} />
+                  <input
+                    type="submit"
+                    value="Add Event"
+                    className="shadow-md bg-primary hover:bg-gray-100 hover:text-primary text-white font-bold py-3 px-7 rounded-full "
+                  />
                 </div>
               </form>
             </div>
