@@ -19,13 +19,11 @@ export default function EventForm({ setShowForm }) {
 
     let obj = {
       id: new Date().getTime(),
-      // title: title.current.value,
-      title: 'test',
+      title: title.current.value,
       description: description.current.value,
       date: new Date(date.current.value).toDateString(),
       type_id: type,
     };
-    console.log(obj);
     let newData = [...state.events, obj];
     dispatch({ type: 'SET_EVENTS', payload: newData });
     setShowForm(false);
