@@ -7,7 +7,7 @@ import Footer from '../../Components/Footer/Footer';
 import { useTranslation } from 'react-i18next';
 
 export default function AboutUs() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className="bg-gray-100 min-h-screen">
       <img src={yellow} alt="yellow" className="absolute right-0 top-0 w-2/3" />

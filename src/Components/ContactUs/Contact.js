@@ -4,7 +4,7 @@ import Button from '../button/button';
 import { useTranslation } from 'react-i18next';
 
 function Contact() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [field, setField] = useState({
     email: '',
     subject: '',
@@ -25,7 +25,7 @@ function Contact() {
         {t(`contactUs.contactUs`)}
       </div>
       <div className="w-full h-28"></div>
-      <div className="flex justify-center space-x-24 > * ">
+      <div className="flex justify-center space-x-24 > *">
         <div className="">
           <form>
             <input
