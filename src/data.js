@@ -3,7 +3,6 @@ export const profile = {
   email: 'jana.khanji@ieee.org',
   name: 'Jana Khanji',
   Avatar: '',
-  occupation: 'Web Developer',
   language: 'en_US',
   gender: 'female',
   location: {
@@ -11,7 +10,7 @@ export const profile = {
     city: 'tripoli',
   },
   birthday: {
-    month: 11,
+    month: 'December',
     day: 18,
     year: 1998,
   },
