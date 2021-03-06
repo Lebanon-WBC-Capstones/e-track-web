@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
 import { Link } from 'react-router-dom';
 
-function Header() {
+function Header({ func }) {
   const [lan, setLan] = useState('En');
   const { t, i18n } = useTranslation();
   const changeLanguage = (language) => {
@@ -76,7 +76,7 @@ function Header() {
         </div>
         <div className="absolute bottom-0 w-full">
           <div className="flex justify-center">
-            <Button text={t(`landing.HeaderButton`)} />
+            <Button text={t(`landing.HeaderButton`)} onClick={() => func()} />
           </div>
         </div>
       </div>

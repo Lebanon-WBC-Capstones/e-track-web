@@ -18,7 +18,7 @@ const HabitTrackerItem = ({ title, duration, click }) => {
                 <div
                   id={el.id}
                   onClick={() => click()}
-                  className={`bg-${color} w-4 h-4  mx-auto rounded-full text-lg text-white flex items-center`}
+                  className={`bg-${color} w-6 h-6  mx-auto rounded-full text-lg text-white flex items-center`}
                 >
                   <span className="text-black text-center w-full text-xs">
                     <i className="fa fa-check w-full fill-current white"></i>
