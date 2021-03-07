@@ -3,7 +3,7 @@ import HabitTrackerItem from '../../Components/HabitTracker/HabitTrackerItem.js'
 import { trackers } from '../../data.js';
 import FloatingBtn from '../../Components/floatingBtn/floatingBtn.js';
 
-function TrackerPage() {
+function TrackerPage({ onClick }) {
   return (
     <>
       <div className="flex flex-col items-center mx-9 my-5 h-5/6 px-10">
@@ -15,12 +15,27 @@ function TrackerPage() {
           />
           <div className=" bg-primary rounded-full w-7 h-7 m-2">
             {' '}
-            <p className="text-gray-800 text-s pl-8 mt-1 px-8">
+            <button
+              type="button"
+              onClick={() => {
+                alert('Filter Completed Habits!');
+              }}
+              className="text-gray-800 text-s pl-8 mt-1 px-8"
+            >
               Completed
-            </p>{' '}
+            </button>{' '}
           </div>
+
           <div className=" bg-gray-300 rounded-full w-7 h-7 m-2 mx-28">
-            <p className="text-gray-800 text-s pl-8 mt-1 px-8">ongoing</p>
+            <button
+              type="button"
+              onClick={() => {
+                alert('Filter ongoing Habits!');
+              }}
+              className="text-gray-800 text-s pl-8 mt-1 px-8"
+            >
+              ongoing
+            </button>
           </div>
         </div>
 
