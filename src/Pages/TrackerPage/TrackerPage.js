@@ -25,13 +25,6 @@ function TrackerPage() {
         </div>
 
         <div className="h-5/6 w-full items-center overflow-y-scroll p-4  mb-8 mt-1 rounded-lg mx-9  my-5  ">
-          {/*<HabitTrackerItem title="Brushing teeth"  duration= {[ { id: 1, status: 'checked', date: 'Sat Feb 20 2021' },
-      { id: 2, status: 'unchecked', date: 'Sun Feb 21 2021' },
-      { id: 3, status: 'checked', date: 'Mon Feb 22 2021' },
-      { id: 4, status: 'checked', date: 'Tue Feb 23 2021' },
-      { id: 5, status: 'checked', date: 'Wed Feb 24 2021' },
-      { id: 6, status: 'checked', date: 'Thu Feb 25 2021' },
-      { id: 7, status: 'unchecked', date: 'Fri Feb 26 2021' }]}/>*/}
           <div>
             {trackers.map((el, index) => {
               return (
