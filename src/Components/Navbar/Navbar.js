@@ -12,7 +12,7 @@ function Navbar() {
   let router = match.pathname.slice(1);
   const active = router[0].toUpperCase() + router.slice(1);
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <>
