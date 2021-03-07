@@ -1,7 +1,9 @@
-import { profile } from '../../data.js';
 import Avatar from '../../assets/images/Avatar.png';
 import themes from '../../Constants/themes.js';
-import { useState, useRef } from 'react/cjs/react.development';
+import { useState, useRef, useContext } from 'react/cjs/react.development';
+import { StateContext } from '../../StateProvider.js';
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
 
 import Button from '../../Components/button/button.js';
 
@@ -39,20 +41,33 @@ let months = [
 ];
 
 function SettingsPage() {
+  const [state, dispatch] = useContext(StateContext);
+
+  const { t, i18n } = useTranslation();
   const lang = useRef('');
   const month = useRef(1);
-  const day = useRef(0);
+  const day = useRef(1);
   const year = useRef(1980);
-  const [gender, setGender] = useState(profile.gender);
+  const [gender, setGender] = useState(state.profile.gender);
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
 
   let imgSrc;
-  profile.Avatar === '' ? (imgSrc = Avatar) : (imgSrc = profile.Avatar);
-  let [theme, setTheme] = useState(profile.theme_id);
+  state.profile.Avatar === ''
+    ? (imgSrc = Avatar)
+    : (imgSrc = state.profile.Avatar);
+  let [theme, setTheme] = useState(state.profile.theme_id);
   function onValueChange(event) {
     setGender(event.target.value);
   }
+  function logout() {
+    console.log('logout');
+  }
+
   function saveData() {
-    const Obj = {
+    const newData = {
       id: '4ad3fe1b-d179-417d-9927-4b38bbf23e76',
       email: 'jana.khanji@ieee.org',
       name: 'Jana Khanji',
@@ -66,7 +81,8 @@ function SettingsPage() {
       },
       theme_id: theme,
     };
-    console.log(Obj);
+    dispatch({ type: 'SET_PROFILE', payload: newData });
+    changeLanguage(lang.current.value);
   }
 
   return (
@@ -75,14 +91,14 @@ function SettingsPage() {
         <div className="w-full flex shadow-sm p-4 justify-center items-center">
           <div className="m-5 w-1/4 flex flex-col items-center">
             <figure className=" mx-5 mb-2">
-              <img className="rounded-full" src={imgSrc} alt="profile" />
+              <img className="rounded-full" src={imgSrc} alt="state.profile" />
             </figure>
           </div>
           <div className="text-Grey m-5 w-3/4">
             <div className="mb-2">
               <input
                 disabled
-                value={profile.email}
+                value={state.profile.email}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 name="email"
                 type="email"
@@ -91,7 +107,7 @@ function SettingsPage() {
             <div className="mb-2">
               <input
                 disabled
-                value={profile.name}
+                value={state.profile.name}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 name="email"
                 type="email"
@@ -135,7 +151,7 @@ function SettingsPage() {
               <select
                 id="day"
                 ref={day}
-                defaultValue={profile.birthday.day}
+                defaultValue={state.profile.birthday.day}
                 className="border rounded w-full  mx-3 px-3  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               >
                 {days}
@@ -143,7 +159,7 @@ function SettingsPage() {
               <select
                 id="month"
                 ref={month}
-                defaultValue={profile.birthday.month}
+                defaultValue={state.profile.birthday.month}
                 className="border rounded w-full mx-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               >
                 {months.map((el, index) => (
@@ -155,7 +171,7 @@ function SettingsPage() {
               <select
                 id="year"
                 ref={year}
-                defaultValue={profile.birthday.year}
+                defaultValue={state.profile.birthday.year}
                 className="border rounded w-full mx-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               >
                 {years}
@@ -168,14 +184,15 @@ function SettingsPage() {
             </div>
             <div className="flex w-full">
               <select
+                defaultValue={i18next.language}
                 id="language"
                 className="border rounded w-full mx-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 ref={lang}
               >
-                <option key="us" value="English">
+                <option key="en" value="en">
                   English
                 </option>
-                <option key="ar" value="Arabic">
+                <option key="ar" value="ar">
                   Arabic
                 </option>
               </select>
@@ -207,7 +224,21 @@ function SettingsPage() {
           </div>
         </div>
         <div className="w-full shadow-sm p-4 flex justify-end px-12">
-          <Button text="Save" onClick={saveData} />
+          <div className="px-3">
+            <button
+              className="shadow-md text-red-400 hover:text-white font-bold py-3 px-7 rounded-full hover:bg-red-400"
+              onClick={logout}
+            >
+              Log out
+            </button>
+          </div>
+          <div className="px-3">
+            <Button
+              text="Save"
+              onClick={saveData}
+              theme={`theme${state.profile.theme_id}`}
+            />
+          </div>
         </div>
       </div>
     </div>

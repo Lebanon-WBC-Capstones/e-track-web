@@ -3,9 +3,10 @@ import FloatingBtn from '../../Components/floatingBtn/floatingBtn.js';
 import EventForm from '../../Components/SpreadModals/EventForm.js';
 import EventsModal from '../../Components/SpreadModals/EventsModal.js';
 
-import { events } from '../../data.js';
+import { StateContext } from '../../StateProvider.js';
+
 import EventsType from '../../Constants/EventsType.js';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 
 let months = [
   'January',
@@ -23,6 +24,7 @@ let months = [
 ];
 
 function SpreadPage() {
+  const [state] = useContext(StateContext);
   const [showModal, setShowModal] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [monthEvents, setmonthEvents] = useState({ month: '', events: [] });
@@ -31,7 +33,9 @@ function SpreadPage() {
   let calendar = [];
 
   function CalendarFct(date) {
-    let todayEvents = events.find((el) => el.date === date.toDateString());
+    let todayEvents = state.events.find(
+      (el) => el.date === date.toDateString()
+    );
     if (date.toDateString() === new Date().toDateString()) return 'today';
     else if (todayEvents) {
       return EventsType.find((el) => el.id === todayEvents.type_id).name;
@@ -42,7 +46,7 @@ function SpreadPage() {
     setmonthEvents({
       month: months[date.getMonth()],
       events: [
-        ...events.filter(
+        ...state.events.filter(
           (el) => new Date(el.date).getMonth() === date.getMonth()
         ),
       ],
@@ -68,7 +72,7 @@ function SpreadPage() {
 
   return (
     <>
-      <div className="h-5/6 overflow-y-scroll grid grid-cols-4 flex justify-items-center mx-9 my-5">
+      <div className="h-5/6 overflow-y-scroll grid grid-cols-4 flex items-center mx-9 my-5">
         {calendar}
         <FloatingBtn onClick={AddNewEvents} />
       </div>

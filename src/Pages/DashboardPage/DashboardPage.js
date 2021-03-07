@@ -5,27 +5,28 @@ import TodoList from '../../Components/Dashboard/TodoList/Todolist.js';
 import Progress from '../../Components/Dashboard/Progress/Progress.js';
 import Mood from '../../Components/Dashboard/Mood/Mood.js';
 import Tracker from '../../Components/Dashboard/Tracker/Tracker.js';
-
-// Data
-import { profile, events, trackers, interest } from '../../data.js';
+import { useContext } from 'react';
+import { StateContext } from '../../StateProvider.js';
 
 function DashboardPage() {
+  const [state] = useContext(StateContext);
+
   function CalendarFct(date) {
     return date.toDateString() === new Date().toDateString() ? 'today' : null;
   }
 
-  const tracker = trackers.filter((el) => !el.completed)[0];
-  const goal = interest.filter((el) => !el.completed)[0];
+  const tracker = state.trackers.filter((el) => !el.completed)[0];
+  const goal = state.interest.filter((el) => !el.completed)[0];
 
   return (
-    <div className="flex flex-wrap h-5/6 justify-items-center mx-9 my-7">
+    <div className="flex flex-wrap h-5/6 justify-center mx-9 my-7">
       <div className="sm:w-full md:w-full lg:w-1/5 flex flex-col justify-between">
         <div className="p-2">
-          <Profile profile={profile} />
+          <Profile profile={state.profile} />
         </div>
         <div className="p-2">
           <Events
-            events={events.filter(
+            events={state.events.filter(
               (el) => el.date === new Date().toDateString()
             )}
           />

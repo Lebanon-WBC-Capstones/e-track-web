@@ -1,25 +1,31 @@
 //when adding new event the object will be printed in the console since we dont have a globale state to add it to
 
 import EventsType from '../../Constants/EventsType.js';
-import Button from '../../Components/button/button.js';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useContext } from 'react';
+import { StateContext } from '../../StateProvider.js';
 
 export default function EventForm({ setShowForm }) {
+  const [state, dispatch] = useContext(StateContext);
+
   const title = useRef(null);
   const description = useRef(null);
   const date = useRef(null);
   const [type, setType] = useState(0);
+
   function AddEvent(e) {
     e.preventDefault();
+
     let obj = {
       id: new Date().getTime(),
       title: title.current.value,
       description: description.current.value,
       date: new Date(date.current.value).toDateString(),
-      type: type,
+      type_id: type,
     };
-    console.log(obj);
+    let newData = [...state.events, obj];
+    dispatch({ type: 'SET_EVENTS', payload: newData });
+    setShowForm(false);
   }
   return (
     <>
@@ -33,15 +39,15 @@ export default function EventForm({ setShowForm }) {
               <h2 className="font-medium text-center pb-3 text-xl">
                 Add new Event
               </h2>
-              <form>
+              <form onSubmit={AddEvent}>
                 <div className="mb-4">
                   <input
-                    required
                     ref={title}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     name="title"
                     type="text"
                     placeholder="Event name"
+                    required
                   />
                 </div>
                 <div className="mb-4">
@@ -67,10 +73,12 @@ export default function EventForm({ setShowForm }) {
                   <p>Event Type:</p>
                   {EventsType.map((el) => {
                     return (
-                      el.gender === 'all' && (
+                      (state.profile.gender === 'female'
+                        ? true
+                        : el.gender === 'all') && (
                         <label
                           key={el.id}
-                          class="flex flex-col items-center mt-3 justify-center justify-items-center content-center"
+                          className="flex flex-col items-center mt-3 justify-center justify-items-center content-center"
                         >
                           <button
                             style={{ backgroundColor: el.color }}
@@ -80,14 +88,20 @@ export default function EventForm({ setShowForm }) {
                             }}
                             className="flex items-center place-items-center content-center text-center rounded-full h-5 w-5 shadow-md p-3"
                           ></button>
-                          <span class="ml-2 text-gray-700 pt-1">{el.name}</span>
+                          <span className="ml-2 text-gray-700 pt-1">
+                            {el.name}
+                          </span>
                         </label>
                       )
                     );
                   })}
                 </div>
                 <div className="p-5 pb-0">
-                  <Button text="Add Event" onClick={AddEvent} />
+                  <input
+                    type="submit"
+                    value="Add Event"
+                    className={`shadow-md bg-theme${state.profile.theme_id} hover:bg-gray-100 hover:text-theme${state.profile.theme_id} text-white font-bold py-3 px-7 rounded-full`}
+                  />
                 </div>
               </form>
             </div>
