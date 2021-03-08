@@ -41,8 +41,8 @@ function CollectionPage() {
           })}
           <div className="h-6"></div>
 
-          <div className="flex h-1/2 items-end">
-            <img src={bro} />
+          <div className="flex h-1/2  ">
+            <img className="h-5/6" src={bro} />
           </div>
         </div>
       </div>
