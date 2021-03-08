@@ -44,7 +44,7 @@ function CollectionPage() {
             placeholder="Search"
           />
 
-          <div className="grid grid-cols-4 ">
+          <div className="flex flex-wrap ">
             {collections.map((el) => {
               return <CollectionCard card={el} />;
             })}
