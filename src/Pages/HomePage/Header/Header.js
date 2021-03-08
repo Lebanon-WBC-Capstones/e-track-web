@@ -8,6 +8,8 @@ import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
 import { Link } from 'react-router-dom';
 
+import { signInWithGoogle } from '../../../firebase.js';
+
 function Header() {
   const [lan, setLan] = useState('En');
   const { t, i18n } = useTranslation();
@@ -62,7 +64,10 @@ function Header() {
       </div>
 
       <div className=" absolute top-7 right-12 ">
-        <Button text={t(`landing.HeaderBtnStarted`)} />
+        <Button
+          text={t(`landing.HeaderBtnStarted`)}
+          onClick={signInWithGoogle}
+        />
       </div>
 
       <div className="absolute top-1/3 right-2/4 h-60">

@@ -15,7 +15,17 @@ import Navbar from './Components/Navbar/Navbar.js';
 import 'aos/dist/aos.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+import { useState, useEffect } from 'react';
+import { auth } from './firebase.js';
+
 function App() {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    auth.onAuthStateChanged((userAuth) => {
+      setUser(userAuth);
+    });
+  }, [user]);
+
   let signedin = true;
   return (
     <Router>
@@ -28,7 +38,7 @@ function App() {
             <LandingPage />
           </Route>
 
-          {signedin ? (
+          {user ? (
             <div className="bg-lightGrey h-screen">
               <Navbar />
               <Route path="/collections" exact>
