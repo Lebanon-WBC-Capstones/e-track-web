@@ -14,19 +14,39 @@ import Navbar from './Components/Navbar/Navbar.js';
 
 import 'aos/dist/aos.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-import { useState, useEffect } from 'react';
+import { StateContext } from './StateProvider.js';
+import { useState, useEffect, useContext } from 'react';
 import { auth } from './firebase.js';
 
 function App() {
+  const [state, dispatch] = useContext(StateContext);
   const [user, setUser] = useState(null);
+
   useEffect(() => {
     auth.onAuthStateChanged((userAuth) => {
       setUser(userAuth);
+      if (userAuth) {
+        console.log(userAuth);
+        const newData = {
+          id: userAuth.uid,
+          email: userAuth.email,
+          name: userAuth.displayName,
+          Avatar: userAuth.photoURL,
+          language: 'En',
+          gender: 'male',
+          birthday: {
+            month: 0,
+            day: 1,
+            year: 1980,
+          },
+          theme_id: 1,
+        };
+        dispatch({ type: 'SET_PROFILE', payload: newData });
+      } else {
+      }
     });
-  }, [user]);
+  }, []);
 
-  let signedin = true;
   return (
     <Router>
       <div>

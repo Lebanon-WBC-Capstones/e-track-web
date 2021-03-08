@@ -6,11 +6,12 @@ import languagePic from '../../../assets/images/languagePic.png';
 import Button from '../../../Components/button/button';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { signInWithGoogle } from '../../../firebase.js';
 
 function Header() {
+  let history = useHistory();
   const [lan, setLan] = useState('En');
   const { t, i18n } = useTranslation();
   const changeLanguage = (language) => {
@@ -65,7 +66,10 @@ function Header() {
       <div className=" absolute top-7 right-12 ">
         <Button
           text={t(`landing.HeaderBtnStarted`)}
-          onClick={signInWithGoogle}
+          onClick={() => {
+            signInWithGoogle();
+            history.push('/home');
+          }}
         />
       </div>
 

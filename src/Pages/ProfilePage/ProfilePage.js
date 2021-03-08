@@ -4,8 +4,10 @@ import { useState, useRef, useContext } from 'react/cjs/react.development';
 import { StateContext } from '../../StateProvider.js';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
+import { auth } from './../../firebase.js';
 
 import Button from '../../Components/button/button.js';
+import { useHistory } from 'react-router';
 
 let days = [];
 for (let i = 1; i < 32; i++) {
@@ -42,6 +44,7 @@ let months = [
 
 function SettingsPage() {
   const [state, dispatch] = useContext(StateContext);
+  let history = useHistory();
 
   const { t, i18n } = useTranslation();
   const lang = useRef('');
@@ -63,15 +66,23 @@ function SettingsPage() {
     setGender(event.target.value);
   }
   function logout() {
-    console.log('logout');
+    auth.signOut().then(
+      function () {
+        alert('done');
+        history.push('/');
+      },
+      function (error) {
+        alert('error');
+      }
+    );
   }
 
   function saveData() {
     const newData = {
-      id: '4ad3fe1b-d179-417d-9927-4b38bbf23e76',
-      email: 'jana.khanji@ieee.org',
-      name: 'Jana Khanji',
-      Avatar: '',
+      id: state.profile.id,
+      email: state.profile.email,
+      name: state.profile.name,
+      Avatar: state.profile.Avatar,
       language: lang.current.value,
       gender: gender,
       birthday: {
