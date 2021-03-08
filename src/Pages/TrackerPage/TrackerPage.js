@@ -7,7 +7,7 @@ function TrackerPage({ onClick }) {
   return (
     <>
       <div className="flex flex-col items-center mx-9 my-5 h-5/6 px-10">
-        <div className="flex justify-center  py-4 w-full rounded-xl shadow-md mx-8 h-20 bg-white px-7 mt-6">
+        <div className="flex justify-between  py-4 w-full rounded-xl shadow-md mx-8 h-20 bg-white px-7 mt-6">
           <input
             className="w-8/12 border-2 border-gray-400 p-4 mb-8 mt-1 rounded-lg"
             type="text"
