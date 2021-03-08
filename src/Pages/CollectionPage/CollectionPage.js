@@ -1,18 +1,27 @@
 import CollectionListItem from '../../Components/CollectionListItem/ListItem.js';
 import bro from '../../assets/images/bro.png';
-import { collections } from '../../data.js';
 import collection from '../../Constants/collection.js';
 import CollectionCard from '../../Components/CollectionCard/CollectionCard.js';
 import FloatingBtn from '../../Components/floatingBtn/floatingBtn.js';
 
-var count = [0, 0, 0, 0, 0];
-
-for (let index = 0; index < collections.length; index++) {
-  count[collections[index].type.id - 1] =
-    count[collections[index].type.id - 1] + 1;
-}
+import { StateContext } from '../../StateProvider.js';
+import { useState, useContext } from 'react';
 
 function CollectionPage() {
+  var count = [0, 0, 0, 0, 0];
+
+  const [state] = useContext(StateContext);
+  const [filter, setfilter] = useState(state.collections);
+
+  function collectionFilter(id) {
+    setfilter(state.collections.filter((el) => el.type.id === id));
+  }
+
+  for (let index = 0; index < state.collections.length; index++) {
+    count[state.collections[index].type.id - 1] =
+      count[state.collections[index].type.id - 1] + 1;
+  }
+
   return (
     <div className="flex h-5/6">
       <div className="h-5/6">
@@ -26,6 +35,7 @@ function CollectionPage() {
               <CollectionListItem
                 number={count[el.id - 1]}
                 type={{ id: el.id }}
+                collectionFilter={collectionFilter}
               />
             );
           })}
@@ -36,7 +46,7 @@ function CollectionPage() {
           </div>
         </div>
       </div>
-      <div className="overflow-y-scroll ">
+      <div className="overflow-y-scroll w-full">
         <div className="flex flex-col justify-start p-4 w-full rounded-xl shadow-md  h-20 bg-white  mt-6">
           <input
             className="w-full border-2 border-gray-400 p-2 mb-8 rounded-lg"
@@ -45,7 +55,7 @@ function CollectionPage() {
           />
 
           <div className="flex flex-wrap ">
-            {collections.map((el) => {
+            {filter.map((el) => {
               return <CollectionCard card={el} />;
             })}
           </div>
