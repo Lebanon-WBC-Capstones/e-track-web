@@ -10,7 +10,12 @@ const InterestPage = () => {
   //   Goal: '',
   //   Dealine: '',
   // });
+  const [element, setElement] = useState(interest[0]);
 
+  const changeElement = (id) => {
+    console.log(id);
+    setElement(interest.find((el) => el.id === id));
+  };
   // const updateFormData = (event) =>
   //   setFormData({
   //     ...formData,
@@ -25,6 +30,19 @@ const InterestPage = () => {
         <div className="flex justify-center font-bold text-2xl p-6">
           My Trackers
         </div>
+        <div className="p-3 opacity-50  shadow-sm w-100 flex items-center justify-between ">
+          <div className="flex w-4/6">
+            <div className="flex justify-between w-11/12">
+              <h1 className="font-medium m-2 text-Grey">Title</h1>
+              <div
+                className={`  m-2 w-6 rounded-full flex justify-center items-center `}
+              >
+                Done
+              </div>
+            </div>
+          </div>
+          <p>Deadline</p>
+        </div>
         <div className=" shadow-sm w-100 ">
           <div>
             {interest.length === 0
@@ -32,9 +50,11 @@ const InterestPage = () => {
               : interest.map((el) => {
                   return (
                     <TrackerItem
-                      item={el.title}
-                      date="12/12/2000"
-                      // key={el.id}
+                      title={el.title}
+                      deadline={el.deadline}
+                      completeditems={el.completedItems}
+                      id={el.id}
+                      changeElement={changeElement}
                       // changeItem={checkTodo}
                       // deleteItem={deleteTodo}
                     />
@@ -51,13 +71,7 @@ const InterestPage = () => {
                 //   document.getElementById('input-todo').focus();
                 // }}
               />
-              <input
-                type="text"
-                id="input-todo"
-                placeholder="Add new Tracker"
-                name="title"
-                className="w-full"
-              />
+              <p className="w-full">Add new Tracker</p>
             </form>
           </div>
         </div>
@@ -65,9 +79,9 @@ const InterestPage = () => {
 
       <div className="bg-white shadow m-2 w-8/12 h-full border rounded-lg ">
         <div className="flex justify-center w-full">
-          <div className="m-3 mr-0 p-2  flex border shadow rounded 2xl:border-solid border-gray-300 block">
+          <div className="m-3  p-2 w-11/12 flex border shadow rounded 2xl:border-solid border-gray-300 block">
             <input
-              className="  w-4/5 focus-within:border-transparent "
+              className="  w-11/12 focus-within:border-transparent "
               // onChange={(e) => updateFormData(e)}
               placeholder="Search"
               type="search"
@@ -83,23 +97,15 @@ const InterestPage = () => {
               // }}
             />
           </div>
-          <input
-            className="  m-3 p-2 w-2/5  border rounded 2xl:border-solid border-gray-300 block"
-            // onChange={(e) => updateFormData(e)}
-            placeholder="filter"
-            type="text"
-            name="Deadline"
-            onfocus="(this.type='date')"
-            selectBoxOptions="Canada;Denmark;Finland;Germany;Mexico"
-          />
         </div>
+
         <div className="flex flex-col items-center">
-          {interest.length === 0
+          {element.items.length === 0
             ? null
-            : interest.map((el) => {
+            : element.items.map((el) => {
                 return (
                   <InterestItem
-                    item={el.title}
+                    item={el}
                     key={el.id}
                     // changeItem={checkTodo}
                     // deleteItem={deleteTodo}
@@ -118,13 +124,7 @@ const InterestPage = () => {
                 //   document.getElementById('input-todo').focus();
                 // }}
               />
-              <input
-                type="text"
-                id="input-todo"
-                placeholder="Add new Interest"
-                name="title"
-                className="w-full"
-              />
+              <p className="w-full">Add new Item</p>
             </form>
           </div>
         </div>

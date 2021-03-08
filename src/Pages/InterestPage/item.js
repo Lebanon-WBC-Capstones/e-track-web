@@ -8,11 +8,11 @@ function InterestItem({ item, changeItem, deleteItem }) {
       <div className="flex">
         <img
           // onClick={() => changeItem(item)}
+          src={item.completed ? checked : uncheck}
           className="h-5 w-5 mr-5 place-self-center cursor-pointer"
-          src={uncheck}
           alt="status"
         />
-        <h1 className="font-medium text-Grey">{item}</h1>
+        <h1 className="font-medium text-Grey">{item.title}</h1>
       </div>
       <img
         className="h-5 w-5 mr-3 cursor-pointer"
