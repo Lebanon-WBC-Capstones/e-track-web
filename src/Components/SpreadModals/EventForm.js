@@ -1,7 +1,6 @@
 //when adding new event the object will be printed in the console since we dont have a globale state to add it to
 
 import EventsType from '../../Constants/EventsType.js';
-import Button from '../../Components/button/button.js';
 
 import { useRef, useState, useContext } from 'react';
 import { StateContext } from '../../StateProvider.js';
@@ -79,7 +78,7 @@ export default function EventForm({ setShowForm }) {
                         : el.gender === 'all') && (
                         <label
                           key={el.id}
-                          class="flex flex-col items-center mt-3 justify-center justify-items-center content-center"
+                          className="flex flex-col items-center mt-3 justify-center justify-items-center content-center"
                         >
                           <button
                             style={{ backgroundColor: el.color }}
@@ -89,7 +88,9 @@ export default function EventForm({ setShowForm }) {
                             }}
                             className="flex items-center place-items-center content-center text-center rounded-full h-5 w-5 shadow-md p-3"
                           ></button>
-                          <span class="ml-2 text-gray-700 pt-1">{el.name}</span>
+                          <span className="ml-2 text-gray-700 pt-1">
+                            {el.name}
+                          </span>
                         </label>
                       )
                     );
@@ -99,7 +100,7 @@ export default function EventForm({ setShowForm }) {
                   <input
                     type="submit"
                     value="Add Event"
-                    className="shadow-md bg-primary hover:bg-gray-100 hover:text-primary text-white font-bold py-3 px-7 rounded-full "
+                    className={`shadow-md bg-theme${state.profile.theme_id} hover:bg-gray-100 hover:text-theme${state.profile.theme_id} text-white font-bold py-3 px-7 rounded-full`}
                   />
                 </div>
               </form>

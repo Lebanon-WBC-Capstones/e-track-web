@@ -6,7 +6,7 @@ import EventsModal from '../../Components/SpreadModals/EventsModal.js';
 import { StateContext } from '../../StateProvider.js';
 
 import EventsType from '../../Constants/EventsType.js';
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 
 let months = [
   'January',

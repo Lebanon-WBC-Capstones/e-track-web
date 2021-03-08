@@ -2,8 +2,9 @@ export const initialState = {
   profile: {
     id: '4ad3fe1b-d179-417d-9927-4b38bbf23e76',
     name: 'Jana Khanji',
+    email: 'jana.khanji@ieee.org',
     Avatar: '',
-    language: 'en_US',
+    language: 'ar',
     gender: 'female',
     birthday: {
       month: 11,
