@@ -17,7 +17,6 @@ function Header() {
     if (lan === 'En') {
       setLan('Ar');
       i18n.changeLanguage(language);
-      console.log(lan);
       console.log(i18next.language);
     } else {
       setLan('En');
