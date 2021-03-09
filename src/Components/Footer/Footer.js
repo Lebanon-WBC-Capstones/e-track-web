@@ -14,7 +14,7 @@ function Footer() {
         <div>
           <img src={logoFooter} className="w-40 h-20 mx-11 p-3" alt="logo" />
         </div>
-        <div className="my-7 text-white "> {t(`footer.footerRights`)}</div>
+        <div className="my-7 text-white mr-12"> {t(`footer.footerRights`)}</div>
       </div>
     </div>
   );
