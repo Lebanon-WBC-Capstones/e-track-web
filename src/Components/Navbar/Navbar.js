@@ -6,13 +6,17 @@ import navElements from '../../Constants/navElements.js';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { StateContext } from '../../StateProvider.js';
+import { useContext } from 'react';
 
 function Navbar() {
+  const [state] = useContext(StateContext);
+
   const match = useLocation();
   let router = match.pathname.slice(1);
   const active = router[0].toUpperCase() + router.slice(1);
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -21,7 +25,9 @@ function Navbar() {
           if (active === el) {
             return (
               <Link to={`/${el}`} key={el}>
-                <div className="bg-white rounded-xl items-center flex flex-col bg-primary p-2 cursor-pointer w-70">
+                <div
+                  className={`rounded-xl items-center flex flex-col bg-theme${state.profile.theme_id} p-2 cursor-pointer w-70`}
+                >
                   <div>
                     <img
                       className="h-9 w-9 justify-self-center max-w-none"

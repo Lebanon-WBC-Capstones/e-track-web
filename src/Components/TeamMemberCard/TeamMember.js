@@ -6,7 +6,7 @@ import ibrahim from '../../assets/images/ibrahim.png';
 import { useTranslation } from 'react-i18next';
 
 function TeamMembers() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const card = [
     {
       photo: <img src={osama} alt="programmerIMG" />,

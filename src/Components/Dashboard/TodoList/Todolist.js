@@ -84,7 +84,7 @@ function TodoList() {
           <div className="opacity-30 flex items-center">
             <form onSubmit={addTodo} className="w-full flex" autoComplete="off">
               <img
-                className="h-5 w-5 mr-5 place-self-center cursor-pointer"
+                className="h-5 w-5 mx-5 place-self-center cursor-pointer"
                 src={Addnew}
                 alt="add"
                 onClick={(e) => {
