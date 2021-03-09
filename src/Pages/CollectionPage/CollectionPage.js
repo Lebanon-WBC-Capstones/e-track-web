@@ -3,6 +3,7 @@ import bro from '../../assets/images/bro.png';
 import collection from '../../Constants/collection.js';
 import CollectionCard from '../../Components/CollectionCard/CollectionCard.js';
 import FloatingBtn from '../../Components/floatingBtn/floatingBtn.js';
+import CollectionCardModal from '../../Components/CollectionCard/CollectionCardModal.js';
 
 import { StateContext } from '../../StateProvider.js';
 import { useState, useContext } from 'react';
@@ -12,9 +13,17 @@ function CollectionPage() {
 
   const [state] = useContext(StateContext);
   const [filter, setfilter] = useState(state.collections);
+  const [showModal, setShowModal] = useState(false);
+  const [element, setElement] = useState();
 
   function collectionFilter(id) {
     setfilter(state.collections.filter((el) => el.type.id === id));
+  }
+
+  function sendCardToModal(id) {
+    setElement(state.collections.find((el) => el.id === id));
+    setShowModal(true);
+    console.log(element);
   }
 
   for (let index = 0; index < state.collections.length; index++) {
@@ -56,12 +65,16 @@ function CollectionPage() {
 
           <div className="flex flex-wrap ">
             {filter.map((el) => {
-              return <CollectionCard card={el} />;
+              return <CollectionCard card={el} sendCard={sendCardToModal} />;
             })}
           </div>
         </div>
       </div>
       <FloatingBtn />
+
+      {showModal && (
+        <CollectionCardModal setShowModal={setShowModal} card={element} />
+      )}
     </div>
   );
 }

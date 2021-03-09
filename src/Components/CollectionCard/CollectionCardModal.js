@@ -71,7 +71,7 @@ export default function CollectionCardModal({ card, setShowModal }) {
           </div>
         </div>
       </div>
-      <div className="opacity-25 fixed inset-0 z-40 bg-gray-300"></div>
+      <div className="opacity-25 fixed inset-0 z-40 bg-black z-10 bg-red w-screen h-sceen"></div>
     </div>
   );
 }
