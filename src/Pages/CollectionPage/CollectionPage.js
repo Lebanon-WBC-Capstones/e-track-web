@@ -20,6 +20,19 @@ function CollectionPage() {
     setfilter(state.collections.filter((el) => el.type.id === id));
   }
 
+  function handleSearch(e) {
+    const description = e.target.value.trim().toLowerCase();
+    if (description === '') {
+      setfilter(state.collections);
+    } else {
+      setfilter(
+        state.collections.filter((card) => {
+          return card.text.toLowerCase().indexOf(description) !== -1;
+        })
+      );
+    }
+  }
+
   function sendCardToModal(id) {
     setElement(state.collections.find((el) => el.id === id));
     setShowModal(true);
@@ -61,6 +74,7 @@ function CollectionPage() {
             className="w-full border-2 border-gray-400 p-2 mb-8 rounded-lg"
             type="text"
             placeholder="Search"
+            onChange={handleSearch}
           />
 
           <div className="flex flex-wrap ">
