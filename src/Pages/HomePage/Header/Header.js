@@ -67,8 +67,7 @@ function Header() {
         <Button
           text={t(`landing.HeaderBtnStarted`)}
           onClick={() => {
-            signInWithGoogle();
-            history.push('/home');
+            signInWithGoogle().then(() => history.push('/home'));
           }}
         />
       </div>

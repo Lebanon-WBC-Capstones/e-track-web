@@ -26,7 +26,6 @@ function App() {
     auth.onAuthStateChanged((userAuth) => {
       setUser(userAuth);
       if (userAuth) {
-        console.log(userAuth);
         const newData = {
           id: userAuth.uid,
           email: userAuth.email,
