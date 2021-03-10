@@ -1,9 +1,7 @@
 import React from 'react';
 import Bin from '../../assets/icons/Bin.png';
-import Tag from '../../assets/icons/price-tag 1.png';
 import Star from '../../assets/icons/Star1.png';
 import FullStar from '../../assets/icons/Star.png';
-import Close from '../../assets/icons/Close.png';
 import Img from '../../assets/icons/image 22.png';
 import collection from '../../Constants/collection.js';
 
@@ -22,8 +20,8 @@ export default function CollectionCardModal({ card, setShowModal }) {
               </p>
             </div>
 
-            <div className="flex p-6  rounded-b items-center">
-              <div className="flex justify-start">
+            <div className="flex p-6  rounded-b items-center w-full">
+              <div className="flex justify-between w-full">
                 <button
                   className="background-transparent  font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
                   type="button"
@@ -31,23 +29,6 @@ export default function CollectionCardModal({ card, setShowModal }) {
                 >
                   {<img src={card.starred ? FullStar : Star} alt="star" />}
                 </button>
-
-                <button
-                  className="background-transparent font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                  style={{ transition: 'all .15s ease' }}
-                >
-                  {<img src={Img} alt="img" />}
-                </button>
-
-                <button
-                  className="background-transparent  font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                  style={{ transition: 'all .15s ease' }}
-                >
-                  {<img src={Tag} alt="tag" />}
-                </button>
-
                 <button
                   className="background-transparent  font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
                   type="button"
@@ -56,22 +37,21 @@ export default function CollectionCardModal({ card, setShowModal }) {
                   {<img src={Bin} alt="delete" />}
                 </button>
               </div>
-
-              <div className="absolute right-0">
-                <button
-                  className="background-transparent font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                  style={{ transition: 'all .15s ease' }}
-                  onClick={() => setShowModal(false)}
-                >
-                  {<img src={Close} alt="close" />}
-                </button>
-              </div>
+            </div>
+            <div className="absolute right-0">
+              <button
+                className="background-transparent font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
+                type="button"
+                style={{ transition: 'all .15s ease' }}
+                onClick={() => setShowModal(false)}
+              >
+                x
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <div className="opacity-25 fixed inset-0 z-40 bg-gray-300"></div>
+      <div className="opacity-25 fixed inset-0 z-40 bg-black z-10 bg-red w-screen h-sceen"></div>
     </div>
   );
 }
