@@ -17,9 +17,6 @@ export default function CollectionCard({ card, sendCard }) {
         {card.text}
       </p>
       <div className="flex justify-between p-2">
-        {card.img === true && (
-          <img src={imgIcon} alt="icon" ClassName="absolute left-0 bottom-0" />
-        )}
         {card.starred === true && (
           <img
             src={starredIcon}

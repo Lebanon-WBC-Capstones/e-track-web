@@ -84,19 +84,19 @@ export const initialState = {
   ],
   collections: [
     {
+      id: 1,
       date: 'Sun Feb 28 2021',
       id: 1,
       type: { id: 5 },
       text: 'today was a great day, we had so mush fun, yeaaaa',
-      img: '',
       starred: true,
     },
     {
+      id: 2,
       date: 'Sun Feb 28 2021',
       id: 2,
       type: { id: 5 },
       text: 'I just waant to die XD',
-      img: '',
       starred: false,
     },
     {
