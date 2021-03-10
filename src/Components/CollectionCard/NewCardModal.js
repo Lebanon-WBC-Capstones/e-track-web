@@ -23,7 +23,6 @@ export default function NewCardModal({ setShowModal }) {
     let newData = [...state.collections, obj];
     dispatch({ type: 'SET_COLLECTION', payload: newData });
     setShowModal(false);
-    console.log(obj);
   }
 
   return (
