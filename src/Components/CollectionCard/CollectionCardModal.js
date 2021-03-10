@@ -20,8 +20,8 @@ export default function CollectionCardModal({ card, setShowModal }) {
               </p>
             </div>
 
-            <div className="flex p-6  rounded-b items-center">
-              <div className="flex justify-start">
+            <div className="flex p-6  rounded-b items-center w-full">
+              <div className="flex justify-between w-full">
                 <button
                   className="background-transparent  font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
                   type="button"
@@ -29,15 +29,6 @@ export default function CollectionCardModal({ card, setShowModal }) {
                 >
                   {<img src={card.starred ? FullStar : Star} alt="star" />}
                 </button>
-
-                <button
-                  className="background-transparent font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                  style={{ transition: 'all .15s ease' }}
-                >
-                  {<img src={Img} alt="img" />}
-                </button>
-
                 <button
                   className="background-transparent  font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
                   type="button"

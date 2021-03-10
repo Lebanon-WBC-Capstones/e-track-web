@@ -3,6 +3,7 @@ import Star from '../../assets/icons/Star1.png';
 import FullStar from '../../assets/icons/Star.png';
 import collection from '../../Constants/collection.js';
 import { StateContext } from '../../StateProvider.js';
+
 export default function NewCardModal({ setShowModal }) {
   const [state, dispatch] = useContext(StateContext);
   let text = useRef('');
@@ -54,8 +55,8 @@ export default function NewCardModal({ setShowModal }) {
               ></textarea>
             </div>
 
-            <div className="flex p-6 rounded-b items-center">
-              <div className="flex justify-start">
+            <div className="flex p-6 rounded-b items-center w-full">
+              <div className="flex justify-between w-full">
                 <button
                   className="background-transparent font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
                   type="button"
@@ -66,22 +67,24 @@ export default function NewCardModal({ setShowModal }) {
                 >
                   {<img src={starred ? FullStar : Star} alt="star" />}
                 </button>
-                <button
-                  className={`shadow-md text-theme${state.profile.theme_id} text-sm font-bold px-6 py-2 rounded-full`}
-                  type="button"
-                  style={{ transition: 'all .15s ease' }}
-                  onClick={() => setShowModal(false)}
-                >
-                  cancel
-                </button>
-                <button
-                  className={`shadow-md bg-theme${state.profile.theme_id} mx-5 text-white text-sm font-bold px-6 py-2 rounded-full`}
-                  type="button"
-                  style={{ transition: 'all .15s ease' }}
-                  onClick={addCollection}
-                >
-                  save
-                </button>
+                <div>
+                  <button
+                    className={`shadow-md text-theme${state.profile.theme_id} text-sm font-bold px-6 py-2 rounded-full`}
+                    type="button"
+                    style={{ transition: 'all .15s ease' }}
+                    onClick={() => setShowModal(false)}
+                  >
+                    cancel
+                  </button>
+                  <button
+                    className={`shadow-md bg-theme${state.profile.theme_id} mx-5 text-white text-sm font-bold px-6 py-2 rounded-full`}
+                    type="button"
+                    style={{ transition: 'all .15s ease' }}
+                    onClick={addCollection}
+                  >
+                    save
+                  </button>
+                </div>
               </div>
             </div>
             <div className="absolute right-0">
