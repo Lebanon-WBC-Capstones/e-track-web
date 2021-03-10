@@ -45,14 +45,6 @@ export default function CollectionCardModal({ card, setShowModal }) {
                   type="button"
                   style={{ transition: 'all .15s ease' }}
                 >
-                  {<img src={Tag} alt="tag" />}
-                </button>
-
-                <button
-                  className="background-transparent  font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                  style={{ transition: 'all .15s ease' }}
-                >
                   {<img src={Bin} alt="delete" />}
                 </button>
               </div>
@@ -71,7 +63,7 @@ export default function CollectionCardModal({ card, setShowModal }) {
           </div>
         </div>
       </div>
-      <div className="opacity-25 fixed inset-0 z-40 bg-gray-300"></div>
+      <div className="opacity-25 fixed inset-0 z-40 bg-black z-10 bg-red w-screen h-sceen"></div>
     </div>
   );
 }
