@@ -8,9 +8,12 @@ import { StateContext } from '../../StateProvider.js';
 
 function TrackerPage() {
   const [showForm, setShowForm] = useState(false);
-  const [state] = useContext(StateContext);
+  const [state, dispatch] = useContext(StateContext);
   const [filterTracker, setfilterTracker] = useState(state.trackers);
-  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    showAll();
+  }, [state.trackers]);
 
   function AddNewEvents() {
     setShowForm(true);
@@ -30,27 +33,48 @@ function TrackerPage() {
   function showAll() {
     setfilterTracker(state.trackers);
   }
+  function hideModel() {
+    setShowForm(false);
+    setfilterTracker(state.trackers);
+  }
 
   function handleSearch(e) {
-    setSearchTerm(e.target.value.trim().toLowerCase());
-
-    if (searchTerm === '') {
+    const res = e.target.value.trim().toLowerCase();
+    if (res === '') {
       setfilterTracker(state.trackers);
     } else {
       setfilterTracker(
         state.trackers.filter((item) => {
-          return item.title.toLowerCase().indexOf(searchTerm) !== -1;
+          return item.title.toLowerCase().indexOf(res) !== -1;
         })
       );
     }
   }
 
-  // const editSearchTerm=(e)=>{
-  //   setSearchTerm(e.target.value)
-  // }
-  // const dynamicSearch=()=>{
-  //   return filterTracker.filter(title=>title.toLowerCase().includes(searchTerm.toLowerCase()))
-  // }
+  function changeTracker(id) {
+    let tracker = state.trackers.find((el) => el.id === id);
+    let trackerItem = tracker.track.map((el) => {
+      if (el.date === new Date().toDateString())
+        return {
+          id: el.id,
+          status: 'checked',
+          date: el.date,
+        };
+      else if (new Date(el.date) < new Date() && el.status === 'notYet') {
+        return { id: el.id, status: 'unchecked', date: el.date };
+      } else return el;
+    });
+    let obj = {
+      id: tracker.id,
+      title: tracker.title,
+      duration: tracker.duration,
+      StartDate: tracker.StartDate,
+      completed: false,
+      track: trackerItem,
+    };
+    let newData = [...state.trackers.filter((el) => el.id != id), obj];
+    dispatch({ type: 'SET_Trackers', payload: newData });
+  }
 
   return (
     <>
@@ -62,34 +86,27 @@ function TrackerPage() {
             placeholder="Search"
             onChange={handleSearch}
           />
-          <div className=" bg-primary rounded-full w-7 h-7 m-2">
-            <button
-              type="button"
-              onClick={filterCompleted}
-              className="text-gray-800 text-s pl-8 mt-1 px-8"
-            >
-              Completed
-            </button>
+          <div
+            className="flex justify-center items-center cursor-pointer"
+            onClick={filterCompleted}
+          >
+            <div className=" bg-primary rounded-full w-7 h-7 m-2"></div>
+            <p className="text-gray-800 text-s mt-1">Completed</p>
+          </div>
+          <div
+            className="flex justify-center items-center cursor-pointer"
+            onClick={filterProgress}
+          >
+            <div className=" bg-gray-300 rounded-full w-7 h-7 m-2"></div>
+            <p className="text-gray-800 text-s mt-1">ongoing</p>
           </div>
 
-          <div className=" bg-gray-300 rounded-full w-7 h-7 m-2 mx-28">
-            <button
-              type="button"
-              onClick={filterProgress}
-              className="text-gray-800 text-s pl-8 mt-1 px-8"
-            >
-              ongoing
-            </button>
-          </div>
-
-          <div className=" bg-blue-400 rounded-full w-7 h-7 m-2 mx-24">
-            <button
-              type="button"
-              onClick={showAll}
-              className="text-blue-400 text-s  mt-1 px-8 "
-            >
-              All tracks
-            </button>
+          <div
+            className="flex justify-center items-center cursor-pointer"
+            onClick={showAll}
+          >
+            <div className=" bg-blue-400 rounded-full w-7 h-7 m-2"></div>
+            <p className="text-blue-400 text-s mt-1">All tracks</p>
           </div>
         </div>
 
@@ -98,11 +115,9 @@ function TrackerPage() {
             {filterTracker.map((el) => {
               return (
                 <HabitTrackerItem
-                  title={el.title}
-                  duration={el.track}
-                  click={function c() {
-                    alert(`Hello`);
-                  }}
+                  key={el.id}
+                  tracker={el}
+                  click={changeTracker}
                 />
               );
             })}
@@ -113,7 +128,7 @@ function TrackerPage() {
       <div>
         <FloatingBtn onClick={AddNewEvents} />
       </div>
-      {showForm && <HabitTrackerForm setShowForm={setShowForm} />}
+      {showForm && <HabitTrackerForm setShowForm={hideModel} />}
     </>
   );
 }

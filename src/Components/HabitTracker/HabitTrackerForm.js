@@ -1,6 +1,40 @@
 import React from 'react';
+import EventsType from '../../Constants/EventsType.js';
+
+import { useRef, useState, useContext } from 'react';
+import { StateContext } from '../../StateProvider.js';
 
 export default function HabitTrackerForm({ setShowForm }) {
+  const [state, dispatch] = useContext(StateContext);
+
+  const title = useRef(null);
+  const duration = useRef(null);
+  const today = new Date();
+
+  function AddTracker(e) {
+    e.preventDefault();
+    let track = [];
+    for (let i = 1; i <= duration.current.value; i++) {
+      track.push({
+        id: i,
+        status: 'notYet',
+        date: new Date(
+          today.setDate(new Date().getDate() + i - 1)
+        ).toDateString(),
+      });
+    }
+    let obj = {
+      id: new Date().getTime(),
+      title: title.current.value,
+      duration: duration.current.value,
+      StartDate: new Date().toDateString(),
+      completed: false,
+      track: track,
+    };
+    let newData = [...state.trackers, obj];
+    dispatch({ type: 'SET_Trackers', payload: newData });
+  }
+
   return (
     <>
       <div
@@ -13,7 +47,7 @@ export default function HabitTrackerForm({ setShowForm }) {
               <h2 className="font-medium text-center pb-3 text-xl">
                 Add new Habit
               </h2>
-              <form>
+              <form onSubmit={AddTracker}>
                 <div className="mb-4">
                   <input
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -21,6 +55,7 @@ export default function HabitTrackerForm({ setShowForm }) {
                     type="text"
                     placeholder="Title"
                     required
+                    ref={title}
                   />
                 </div>
 
@@ -30,6 +65,7 @@ export default function HabitTrackerForm({ setShowForm }) {
                     name="title"
                     placeholder="duration"
                     required
+                    ref={duration}
                   >
                     <option value="" disabled selected>
                       Choose duration
@@ -52,7 +88,7 @@ export default function HabitTrackerForm({ setShowForm }) {
 
             <div className="absolute right-0">
               <button
-                className="background-transparent font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
+                className="background-transparent font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 "
                 type="button"
                 style={{ transition: 'all .15s ease' }}
                 onClick={() => setShowForm(false)}

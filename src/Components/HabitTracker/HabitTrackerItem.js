@@ -1,23 +1,32 @@
 import React from 'react';
 
-const HabitTrackerItem = ({ title, duration, click }) => {
+const HabitTrackerItem = ({ tracker, click }) => {
   let color = '';
+
+  function check(id) {
+    let today = new Date().toDateString();
+    if (tracker.track.find((el) => el.id === id).date === today) {
+      click(tracker.id);
+    } else {
+      alert('You cannot check this item');
+    }
+  }
 
   return (
     <div className="absolutemax-w-5xl mx-auto my-4 border-b-1 box-border h-auto w-auto p-4 pb-4 rounded-xl bg-white shadow-lg">
-      <p className="text-primary text-2xl pb-4">{title}</p>
+      <p className="text-primary text-2xl pb-4">{tracker.title}</p>
 
       <div className="flex pb-3">
-        {duration.map((el, i) => {
+        {tracker.track.map((el, i) => {
           if (el.status === 'notYet') color = 'lightGrey';
           else if (el.status === 'checked') color = 'primary ';
           else color = 'red-400';
           return (
-            <div className="flex">
-              <div key={el.id} className="z-20">
+            <div className="flex" key={el.id}>
+              <div className="z-20">
                 <div
                   id={el.id}
-                  onClick={() => click()}
+                  onClick={() => check(el.id)}
                   className={`bg-${color} w-6 h-6  mx-auto rounded-full text-lg text-white flex items-center`}
                 >
                   <span className="text-black text-center w-full text-xs">
@@ -27,7 +36,7 @@ const HabitTrackerItem = ({ title, duration, click }) => {
                   </span>
                 </div>
               </div>
-              {i === duration.length - 1 ? null : (
+              {i === tracker.track.length - 1 ? null : (
                 <div
                   className="relative right-2 w-1/6 align-center items-center align-middle content-center flex "
                   key={el.id}
