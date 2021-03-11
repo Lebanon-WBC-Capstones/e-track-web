@@ -21,7 +21,7 @@ function Contact() {
   return (
     <div className="bg-gray-100">
       <div className="w-full h-8"></div>
-      <div className="font-semibold text-6xl flex justify-center text-gray-700 font-mono">
+      <div className="font-semibold text-3xl flex justify-center text-gray-700 font-mono">
         {t(`contactUs.contactUs`)}
       </div>
       <div className="w-full h-28"></div>

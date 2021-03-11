@@ -1,11 +1,14 @@
 import EventsType from '../../Constants/EventsType.js';
 import Bin from '../../assets/icons/Bin.png';
 import { StateContext } from '../../StateProvider.js';
-import { useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function EventsModal({ setShowModal, monthEvents }) {
   const [Events, setEvents] = useState([...monthEvents.events]);
   const [state, dispatch] = useContext(StateContext);
+
+  const { t } = useTranslation();
 
   function deleteEvent(id) {
     let newData = state.events.filter((el) => el.id !== id);
@@ -25,7 +28,7 @@ export default function EventsModal({ setShowModal, monthEvents }) {
               <h2 className="font-medium text-center pb-3 text-xl">
                 {monthEvents.month}
               </h2>
-              <p>Events</p>
+              <p>{t(`SpreadModal.events`)}</p>
               {Events.map((el) => {
                 return (
                   <div
