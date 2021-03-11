@@ -4,9 +4,21 @@ import Star from '../../assets/icons/Star1.png';
 import FullStar from '../../assets/icons/Star.png';
 import Img from '../../assets/icons/image 22.png';
 import collection from '../../Constants/collection.js';
+import { StateContext } from '../../StateProvider.js';
+import { useContext } from 'react';
 
 export default function CollectionCardModal({ card, setShowModal }) {
   const type = collection.find((el) => el.id === card.type.id);
+
+  const [state, dispatch] = useContext(StateContext);
+
+  function deleteCard(id) {
+    let newData = state.collections.filter((el) => el.id !== id);
+    dispatch({ type: 'SET_COLLECTION', payload: newData });
+    setShowModal(false);
+    console.log(id);
+  }
+
   return (
     <div>
       <div className="justify-center modal items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
@@ -33,6 +45,7 @@ export default function CollectionCardModal({ card, setShowModal }) {
                   className="background-transparent  font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
                   type="button"
                   style={{ transition: 'all .15s ease' }}
+                  onClick={() => deleteCard(card.id)}
                 >
                   {<img src={Bin} alt="delete" />}
                 </button>
