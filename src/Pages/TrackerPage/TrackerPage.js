@@ -73,15 +73,16 @@ function TrackerPage() {
       track: trackerItem,
     };
     let newData = [...state.trackers.filter((el) => el.id != id), obj];
+    newData = newData.sort((a, b) => (a.id > b.id ? 1 : -1));
     dispatch({ type: 'SET_Trackers', payload: newData });
   }
 
   return (
     <>
-      <div className="flex flex-col items-center mx-9 my-5 h-5/6 px-10">
-        <div className="flex justify-between py-4 w-full rounded-xl shadow-md mx-8 h-20 bg-white px-7 mt-6">
+      <div className="flex flex-col items-center mx-9 my-5 h-5/6">
+        <div className="flex justify-between items-center py-4 w-full rounded-xl shadow-md mx-8 h-16 bg-white px-7">
           <input
-            className="w-8/12 border-2 border-gray-400 p-4 mb-8 mt-1 rounded-lg"
+            className="w-8/12 border-2 border-gray-400 p-1 rounded-lg "
             type="text"
             placeholder="Search"
             onChange={handleSearch}
@@ -90,27 +91,27 @@ function TrackerPage() {
             className="flex justify-center items-center cursor-pointer"
             onClick={filterCompleted}
           >
-            <div className=" bg-primary rounded-full w-7 h-7 m-2"></div>
-            <p className="text-gray-800 text-s mt-1">Completed</p>
+            <div className="bg-primary rounded-full w-5 h-5 m-2"></div>
+            <p className="text-gray-800 text-s">Completed</p>
           </div>
           <div
             className="flex justify-center items-center cursor-pointer"
             onClick={filterProgress}
           >
-            <div className=" bg-gray-300 rounded-full w-7 h-7 m-2"></div>
-            <p className="text-gray-800 text-s mt-1">ongoing</p>
+            <div className=" bg-gray-300 rounded-full w-5 h-5 m-2"></div>
+            <p className="text-gray-800 text-s">ongoing</p>
           </div>
 
           <div
             className="flex justify-center items-center cursor-pointer"
             onClick={showAll}
           >
-            <div className=" bg-blue-400 rounded-full w-7 h-7 m-2"></div>
-            <p className="text-blue-400 text-s mt-1">All tracks</p>
+            <div className=" bg-blue-400 rounded-full w-5 h-5 m-2"></div>
+            <p className="text-blue-400 text-s">All tracks</p>
           </div>
         </div>
 
-        <div className="h-5/6 w-full items-center overflow-y-scroll p-4 mb-8 mt-1 rounded-lg mx-9 my-5">
+        <div className="h-5/6 w-full items-center overflow-y-scroll rounded-lg px-10 mt-2">
           <div>
             {filterTracker.map((el) => {
               return (

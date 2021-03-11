@@ -33,6 +33,7 @@ export default function HabitTrackerForm({ setShowForm }) {
     };
     let newData = [...state.trackers, obj];
     dispatch({ type: 'SET_Trackers', payload: newData });
+    setShowForm(false);
   }
 
   return (
