@@ -1,14 +1,13 @@
 import CollectionListItem from '../../Components/CollectionListItem/ListItem.js';
 import bro from '../../assets/images/bro.png';
 import collection from '../../Constants/collection.js';
-import { initialState } from '../../data.js';
 import CollectionCard from '../../Components/CollectionCard/CollectionCard.js';
 import FloatingBtn from '../../Components/floatingBtn/floatingBtn.js';
 import CollectionCardModal from '../../Components/CollectionCard/CollectionCardModal.js';
 import NewCardModal from '../../Components/CollectionCard/NewCardModal.js';
 
 import { StateContext } from '../../StateProvider.js';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 
 function CollectionPage() {
   var count = [0, 0, 0, 0, 0];
@@ -17,15 +16,22 @@ function CollectionPage() {
   const [filter, setfilter] = useState(state.collections);
   const [showModal, setShowModal] = useState(false);
   const [element, setElement] = useState();
+  const [showForm, setShowForm] = useState(false);
 
-  initialState.collections.sort((x, y) =>
+  useEffect(() => {
+    setfilter(state.collections);
+  }, [state.collections]);
+
+  state.collections.sort((x, y) =>
     x.starred === y.starred ? 0 : x.starred ? -1 : 1
   );
 
-  console.log(initialState.collections);
-
   function collectionFilter(id) {
     setfilter(state.collections.filter((el) => el.type.id === id));
+  }
+
+  function AddNewCard() {
+    setShowForm(true);
   }
 
   function handleSearch(e) {
@@ -92,11 +98,13 @@ function CollectionPage() {
           </div>
         </div>
       </div>
-      <FloatingBtn />
+
+      <FloatingBtn onClick={AddNewCard} />
 
       {showModal && (
         <CollectionCardModal setShowModal={setShowModal} card={element} />
       )}
+      {showForm && <NewCardModal setShowForm={setShowForm} />}
     </div>
   );
 }

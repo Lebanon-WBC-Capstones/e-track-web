@@ -12,7 +12,7 @@ const reducer = (state, action) => {
     case 'SET_Trackers':
       return { ...state, trackers: action.payload };
     case 'SET_COLLECTION':
-      return { ...state, collection: action.payload };
+      return { ...state, collections: action.payload };
     case 'SET_INTEREST':
       return { ...state, interest: action.payload };
     default:

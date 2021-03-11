@@ -3,8 +3,9 @@ import Star from '../../assets/icons/Star1.png';
 import FullStar from '../../assets/icons/Star.png';
 import collection from '../../Constants/collection.js';
 import { StateContext } from '../../StateProvider.js';
+import { useEffect } from 'react';
 
-export default function NewCardModal({ setShowModal }) {
+export default function NewCardModal({ setShowForm }) {
   const [state, dispatch] = useContext(StateContext);
   let text = useRef('');
   let typeId = useRef(1);
@@ -16,13 +17,15 @@ export default function NewCardModal({ setShowModal }) {
     let obj = {
       date: date,
       id: new Date().getTime(),
-      type: { id: typeId.current.value },
+      type: { id: parseInt(typeId.current.value) },
       text: text.current.value,
       starred: starred,
     };
     let newData = [...state.collections, obj];
+    console.log(obj);
+
     dispatch({ type: 'SET_COLLECTION', payload: newData });
-    setShowModal(false);
+    setShowForm(false);
   }
 
   return (
@@ -46,7 +49,7 @@ export default function NewCardModal({ setShowModal }) {
                   ))}
                 </select>
                 <textarea
-                  class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+                  className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
                   rows="4"
                   ref={text}
                   required
@@ -70,13 +73,12 @@ export default function NewCardModal({ setShowModal }) {
                       className={`shadow-md text-theme${state.profile.theme_id} text-sm font-bold px-6 py-2 rounded-full`}
                       type="button"
                       style={{ transition: 'all .15s ease' }}
-                      onClick={() => setShowModal(false)}
+                      onClick={() => setShowForm(false)}
                     >
                       Cancel
                     </button>
                     <input
                       className={`shadow-md bg-theme${state.profile.theme_id} mx-5 text-white text-sm font-bold px-6 py-2 rounded-full`}
-                      type="button"
                       type="submit"
                       value="Save"
                     />
@@ -89,7 +91,7 @@ export default function NewCardModal({ setShowModal }) {
                 className="background-transparent font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
                 type="button"
                 style={{ transition: 'all .15s ease' }}
-                onClick={() => setShowModal(false)}
+                onClick={() => setShowForm(false)}
               >
                 x
               </button>
