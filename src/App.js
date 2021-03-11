@@ -84,10 +84,10 @@ function App() {
               </Route>
             </div>
           ) : (
-              <Route path="*">
-                <NotFound />
-              </Route>
-            )}
+            <Route path="*">
+              <NotFound />
+            </Route>
+          )}
         </Switch>
       </div>
     </Router>
