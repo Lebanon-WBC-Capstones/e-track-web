@@ -7,10 +7,10 @@ function CollectionListItem({ number, type, collectionFilter }) {
   );
   return (
     <div
-      className=" flex justify-between border-b-2 w-auto "
+      className=" flex justify-between border-b-2 w-auto px-5"
       onClick={() => collectionFilter(type.id)}
     >
-      <div className=" m-2 ">{collectionType.name}</div>
+      <div className="m-2">{collectionType.name}</div>
       <div
         className={`  m-2 w-6 rounded-full flex justify-center items-center bg-${collectionType.color}`}
       >
