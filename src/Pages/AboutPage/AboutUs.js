@@ -5,15 +5,15 @@ import Team from '../../Components/TeamMemberCard/TeamMember';
 import ContactUs from '../../Components/ContactUs/Contact';
 import Footer from '../../Components/Footer/Footer';
 import { useTranslation } from 'react-i18next';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function AboutUs() {
   const { t } = useTranslation();
   return (
     <div className="bg-gray-100 min-h-screen">
-      <div className="absolute top-7 left-20">
-        <Link to="/Home">
-          <button className="shadow-md  hover:text-primary hover:bg-gray-100 bg-primary text-white font-bold py-3 px-7 rounded-full">
+      <div className="absolute top-7 right-12 z-10 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ">
+        <Link to="/">
+          <button className="shadow-md hover:text-white text-primary font-bold py-3 px-7 rounded-full">
             Home
           </button>
         </Link>
