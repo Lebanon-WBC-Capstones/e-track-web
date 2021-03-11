@@ -16,7 +16,6 @@ export default function CollectionCardModal({ card, setShowModal }) {
     let newData = state.collections.filter((el) => el.id !== id);
     dispatch({ type: 'SET_COLLECTION', payload: newData });
     setShowModal(false);
-    console.log(id);
   }
 
   return (
