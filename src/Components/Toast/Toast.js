@@ -1,6 +1,6 @@
 //props: text="Logout" setShowToast={setShowToast}
 // if the toast is an alert add this prop : alert={true}
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 function Toast({ text, setShowToast, alert = false }) {
   let color = 'primary';
