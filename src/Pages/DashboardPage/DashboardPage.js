@@ -52,7 +52,7 @@ function DashboardPage() {
           >
             <CalendarComp
               classDayfct={CalendarFct}
-              onClick={() => { }}
+              onClick={() => {}}
               startDate={new Date()}
             />
           </div>
@@ -89,4 +89,6 @@ function DashboardPage() {
       </div>
     );
   }
-  export default DashboardPage;
+}
+
+export default DashboardPage;
