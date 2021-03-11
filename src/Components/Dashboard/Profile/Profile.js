@@ -10,7 +10,7 @@ function Profile({ profile }) {
     <div className="bg-white rounded-xl shadow-md flex flex-wrap p-3 min-w-min items-center content-center">
       <figure>
         <img
-          className="w-14 h-14 rounded-full mr-5"
+          className="w-14 h-14 rounded-full mx-5"
           src={imgSrc}
           alt="profile"
         />
