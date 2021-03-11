@@ -29,9 +29,7 @@ const HabitTrackerItem = ({ tracker, click }) => {
     <>
       <div className="absolutemax-w-5xl mx-auto my-4 border-b-1 box-border h-auto w-auto p-4 pb-4 rounded-xl bg-white shadow-lg flex justify-between">
         <div>
-          <p className={`text-theme${state.profile.theme_id} text-2xl pb-2`}>
-            {tracker.title}
-          </p>
+          <p className={`text-Grey text-2xl pb-2`}>{tracker.title}</p>
 
           <div className="flex">
             {tracker.track.map((el, i) => {

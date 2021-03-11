@@ -1,5 +1,5 @@
 import EventsType from '../../Constants/EventsType.js';
-import bin from '../../assets/images/delete.png';
+import Bin from '../../assets/icons/Bin.png';
 import { StateContext } from '../../StateProvider.js';
 import { useState, useContext } from 'react';
 
@@ -51,7 +51,7 @@ export default function EventsModal({ setShowModal, monthEvents }) {
                       </h2>
                       <img
                         className="h-5 w-5 ml-5 cursor-pointer"
-                        src={bin}
+                        src={Bin}
                         alt="options"
                         onClick={() => deleteEvent(el.id)}
                       />

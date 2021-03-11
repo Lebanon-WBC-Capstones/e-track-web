@@ -50,7 +50,6 @@ function CollectionPage() {
   function sendCardToModal(id) {
     setElement(state.collections.find((el) => el.id === id));
     setShowModal(true);
-    console.log(element);
   }
 
   for (let index = 0; index < state.collections.length; index++) {

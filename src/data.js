@@ -158,7 +158,7 @@ export const initialState = {
     {
       id: 1,
       title: 'Anime',
-      deadline: 'Sun Feb 28 2021',
+      deadline: '2021-03-18',
       goal: 10,
       completedItems: 3,
       completed: false,
