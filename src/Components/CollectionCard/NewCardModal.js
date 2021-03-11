@@ -21,8 +21,6 @@ export default function NewCardModal({ setShowForm }) {
       starred: starred,
     };
     let newData = [...state.collections, obj];
-    console.log(obj);
-
     dispatch({ type: 'SET_COLLECTION', payload: newData });
     setShowForm(false);
   }

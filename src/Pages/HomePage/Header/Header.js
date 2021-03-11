@@ -10,7 +10,6 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { signInWithGoogle } from '../../../firebase.js';
 
-
 function Header({ func }) {
   let history = useHistory();
 
@@ -20,7 +19,6 @@ function Header({ func }) {
     if (lan === 'En') {
       setLan('Ar');
       i18n.changeLanguage(language);
-      console.log(i18next.language);
     } else {
       setLan('En');
       i18n.changeLanguage(language);
