@@ -1,8 +1,7 @@
 import React from 'react';
 import Bin from '../../assets/icons/Bin.png';
-import Star from '../../assets/icons/Star1.png';
-import FullStar from '../../assets/icons/Star.png';
-import Img from '../../assets/icons/image 22.png';
+import Star from '../../assets/icons/Star.png';
+import FullStar from '../../assets/icons/Star1.png';
 import collection from '../../Constants/collection.js';
 import { StateContext } from '../../StateProvider.js';
 import { useContext } from 'react';
@@ -34,11 +33,14 @@ export default function CollectionCardModal({ card, setShowModal }) {
             <div className="flex p-6  rounded-b items-center w-full">
               <div className="flex justify-between w-full">
                 <button
-                  className="background-transparent  font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
+                  className="background-transparent font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
                   type="button"
-                  style={{ transition: 'all .15s ease' }}
                 >
-                  {<img src={card.starred ? FullStar : Star} alt="star" />}
+                  <img
+                    src={card.starred ? FullStar : Star}
+                    alt="star"
+                    className="w-7 h-7"
+                  />
                 </button>
                 <button
                   className="background-transparent  font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"

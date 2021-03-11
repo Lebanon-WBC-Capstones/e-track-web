@@ -1,6 +1,5 @@
 import React from 'react';
-import imgIcon from '../../assets/icons/image.png';
-import starredIcon from '../../assets/icons/Star.png';
+import starredIcon from '../../assets/icons/Star1.png';
 import collection from '../../Constants/collection.js';
 
 export default function CollectionCard({ card, sendCard }) {
@@ -16,12 +15,12 @@ export default function CollectionCard({ card, sendCard }) {
       <div className=" h-20 overflow-y-hidden overflow-x-hidden">
         <p className="text-2xl text-center font-semibold">{card.text}</p>
       </div>
-      <div className="flex justify-between p-2">
+      <div className="flex justify-between p-2 w-10 h-10">
         {card.starred === true && (
           <img
             src={starredIcon}
             alt="starred"
-            ClassName="absolute right-0 bottom-0 "
+            ClassName="absolute right-0 bottom-0"
           />
         )}
       </div>

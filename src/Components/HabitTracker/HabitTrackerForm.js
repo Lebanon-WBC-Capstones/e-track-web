@@ -80,7 +80,7 @@ export default function HabitTrackerForm({ setShowForm }) {
                   <input
                     type="submit"
                     value="Add Habit"
-                    className="shadow-md bg-primary hover:bg-gray-100 hover:text-primary text-white font-bold py-3 px-7 rounded-full "
+                    className={`shadow-md bg-theme${state.profile.theme_id} hover:bg-gray-100 hover:text-theme${state.profile.theme_id} text-white font-bold py-3 px-7 rounded-full`}
                   />
                 </div>
               </form>
