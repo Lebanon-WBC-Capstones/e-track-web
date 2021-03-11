@@ -4,17 +4,33 @@ import Star from '../../assets/icons/Star.png';
 import FullStar from '../../assets/icons/Star1.png';
 import collection from '../../Constants/collection.js';
 import { StateContext } from '../../StateProvider.js';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 export default function CollectionCardModal({ card, setShowModal }) {
   const type = collection.find((el) => el.id === card.type.id);
 
   const [state, dispatch] = useContext(StateContext);
+  const [star, setStar] = useState(card.starred);
 
   function deleteCard(id) {
     let newData = state.collections.filter((el) => el.id !== id);
     dispatch({ type: 'SET_COLLECTION', payload: newData });
     setShowModal(false);
+  }
+
+  function changeStar(e) {
+    e.preventDefault();
+    setStar(!star);
+    let newData = state.collections.filter((el) => el.id !== card.id);
+    let obj = {
+      date: card.date,
+      id: card.id,
+      type: { ...card.type },
+      text: card.text,
+      starred: !card.starred,
+    };
+    newData.push(obj);
+    dispatch({ type: 'SET_COLLECTION', payload: newData });
   }
 
   return (
@@ -35,9 +51,10 @@ export default function CollectionCardModal({ card, setShowModal }) {
                 <button
                   className="background-transparent font-bold px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
                   type="button"
+                  onClick={changeStar}
                 >
                   <img
-                    src={card.starred ? FullStar : Star}
+                    src={star ? FullStar : Star}
                     alt="star"
                     className="w-7 h-7"
                   />
