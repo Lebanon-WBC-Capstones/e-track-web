@@ -77,6 +77,46 @@
         "footer":{
             "footerFollow":"Follow us",
             "footerRights": "© All rights reserved"
+        },
+
+        "Dashboard":{
+            "event":"You have no events today",
+            "mood":"How are you feeling today?",
+            "progress_deadline":"Deadline:",
+            "progress_progress":"Progress",
+            "progress_goal":"Add new Goal",
+            "todolist":"My Todo List",
+            "addTodo":"Add new Todo",
+            "addtracker":"Add new Tracker",
+            "unfinishedTracker1":"you did not",
+            "unfinishedTracker2":"today",
+            "finishedTracker1":"you did",
+            "finishedTracker2":"today,",
+            "finishedTracker3":"Check other trackers"
+
+        },
+
+        "SpreadForm":{
+            "event": "Add new Event",
+            "event_name": "Event name",
+            "event_description": "Event description",
+            "event_date":"Event date",
+            "event_type":"Event Type: ",
+            "event_btn":"Add Event"
+        },
+
+        "SpreadModal":{
+            "events": "Events"
+        },
+
+        "Profile":{
+            "gender":"Gender:",
+            "male": "Male",
+            "female": "Female",
+            "birthday": "Birthday: ",
+            "language": "Language: ",
+            "theme": "theme: ",
+            "save": "Save",
+            "logout": "Log out"
         }
-        
 }

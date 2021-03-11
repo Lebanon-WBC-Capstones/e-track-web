@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import TodoItem from './TodoItem.js';
 import Addnew from '../../../assets/images/Addnew.png';
+import { useTranslation } from 'react-i18next';
 
 function TodoList() {
+  const { t } = useTranslation();
   const [Todolist, setTodolist] = useState({
     date: new Date().toDateString(),
     todoItems: [],
@@ -63,7 +65,7 @@ function TodoList() {
 
   return (
     <div className="bg-white rounded-xl shadow-md pt-3 h-full min-w-min text-center">
-      <h2 className="font-medium text-Grey">My Todo List</h2>
+      <h2 className="font-medium text-Grey">{t(`Dashboard.todolist`)}</h2>
       <div className="p-3 shadow-sm w-100"></div>
       <div>
         {Todolist.todoItems.length === 0
@@ -94,7 +96,7 @@ function TodoList() {
               <input
                 type="text"
                 id="input-todo"
-                placeholder="Add new Todo"
+                placeholder={t(`Dashboard.addTodo`)}
                 name="title"
                 className="w-full"
               />

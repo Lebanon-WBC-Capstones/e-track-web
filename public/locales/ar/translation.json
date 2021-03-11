@@ -78,5 +78,45 @@
         "footer":{
             "footerFollow":"تابعنا على : ",
             "footerRights": "© جميع الحقوق محفوظة"
+        },
+
+        "Dashboard":{
+            "event":"لا يوجد لديك مناسبات اليوم",
+            "mood":"ما هو مزاجك اليوم؟",
+            "progress_deadline":"الموعد النّهائي:",
+            "progress_progress":"التقدّم",
+            "progress_goal":"إضافة هدف جديد",
+            "todolist":"لائحة المهام",
+            "addTodo":"إضافة مهمة  ",
+            "addtracker":"إضافة عادة ",
+            "finishedTracker1":"لقد قمت بـ",
+            "finishedTracker2":"اليوم",
+            "unfinishedTracker1":"لم تقم بـ",
+            "unfinishedTracker2":"اليوم،",
+            "finishedTracker3":"تحقّق من باقي العادات"
+        },
+
+        "SpreadForm":{
+            "event": "إضافة منسَابة جديدة",
+            "event_name": "إسم المناسَبة",
+            "event_description": "شرح المناسَبة",
+            "event_date":"تاريخ المناسَبة",
+            "event_type":"نوع المناسَبة: ",
+            "event_btn":"إضافة مناسَبة"
+        },
+
+        "SpreadModal":{
+            "events": "المُناسَبات"
+        },
+
+        "Profile":{
+            "gender":"الجنس: ",
+            "male": "ذكر",
+            "female": "أنثى",
+            "birthday": "تاريخ الميلاد: ",
+            "language": "اللغة: ",
+            "theme": "النّمط: ",
+            "save": "حفظ",
+            "Logout": "خروج"
         }
 }
