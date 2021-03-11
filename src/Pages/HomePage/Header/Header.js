@@ -5,7 +5,6 @@ import languagePic from '../../../assets/images/languagePic.png';
 
 import Button from '../../../Components/button/button';
 import { useTranslation } from 'react-i18next';
-import i18next from 'i18next';
 import { Link, useHistory } from 'react-router-dom';
 
 import { signInWithGoogle } from '../../../firebase.js';
