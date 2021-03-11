@@ -11,18 +11,18 @@ export default function AboutUs() {
   const { t } = useTranslation();
   return (
     <div className="bg-gray-100 min-h-screen">
-      <div className="absolute top-7 right-12 z-10 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ">
+      <div className="absolute top-7 left-12 z-10 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ">
         <Link to="/">
-          <button className="shadow-md hover:text-white text-primary font-bold py-3 px-7 rounded-full">
+          <button className="shadow-md text-primary font-bold py-3 px-7 rounded-full">
             Home
           </button>
         </Link>
       </div>
       <img src={yellow} alt="yellow" className="absolute right-0 top-0 w-2/3" />
-      <div className="flex justify-around h-screen items-center flex-wrap">
-        <img src={About_Us} alt="about us" className=" z-10" />
-        <p className=" text-xl  font-sans z-10">
-          <span className="text-2xl font-medium flex justify-center ">
+      <div className="flex justify-around w-full h-screen items-center flex-wrap">
+        <img src={About_Us} alt="about us" className="w-2/5 z-10" />
+        <p className=" text-xl font-sans z-10 w-2/5">
+          <span className="text-2xl font-semibold text-3xl text-gray-700 font-mono">
             {t(`aboutus.aboutus1`)}
           </span>
           <br /> <br />
