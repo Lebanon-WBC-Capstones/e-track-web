@@ -32,7 +32,7 @@ export default function YourJournal() {
         <img
           src={DataPoints}
           alt="Data"
-          className="w-1/2 h-auto"
+          className="w-5/12 h-auto"
           data-aos="zoom-in"
         />
         <img

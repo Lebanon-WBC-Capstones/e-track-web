@@ -2,8 +2,29 @@ import React from 'react';
 import Logo from '../../../assets/images/Logo.png';
 import img1 from '../../../assets/images/img1.png';
 import Button from '../../../Components/button/button';
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
+import { Link, useHistory } from 'react-router-dom';
 
-function Header() {
+import { signInWithGoogle } from '../../../firebase.js';
+
+
+function Header({ func }) {
+  let history = useHistory();
+
+  const [lan, setLan] = useState('En');
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (language) => {
+    if (lan === 'En') {
+      setLan('Ar');
+      i18n.changeLanguage(language);
+      console.log(i18next.language);
+    } else {
+      setLan('En');
+      i18n.changeLanguage(language);
+    }
+  };
+
   return (
     <div className="bg-gray-100 min-h-screen">
       <img
@@ -17,9 +38,38 @@ function Header() {
         alt="background image"
         width="900"
       />
+      {/*button to translate*/}
 
-      <div className="w-52 h-14 absolute top-5 right-5">
-        <Button text="Get Started" />
+      <div className="">
+        <img
+          src={languagePic}
+          alt="translate"
+          className="absolute p-1 w-12 top-8 right-80 cursor-pointer"
+          onClick={() => {
+            if (lan === 'En') {
+              changeLanguage('en');
+            } else {
+              changeLanguage('ar');
+            }
+          }}
+        />
+      </div>
+
+      <div className="  absolute top-7 right-48 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ">
+        <Link to="/about">
+          <button className="shadow-md  hover:text-white text-primary font-bold py-3 px-7 rounded-full">
+            {t(`landing.HeaderBtnAbout`)}
+          </button>
+        </Link>
+      </div>
+
+      <div className=" absolute top-7 right-12 ">
+        <Button
+          text={t(`landing.HeaderBtnStarted`)}
+          onClick={() => {
+            signInWithGoogle().then(() => history.push('/home'));
+          }}
+        />
       </div>
 
       <div className="absolute top-1/3 right-2/4 h-60">
@@ -32,8 +82,8 @@ function Header() {
           <span className="text-5xl ">Track it the right way </span>
         </div>
         <div className="absolute bottom-0 w-full">
-          <div className="flex justify-center">
-            <Button text="How It Works?" />
+          <div className="flex justify-center transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+            <Button text={t(`landing.HeaderButton`)} onClick={() => func()} />
           </div>
         </div>
       </div>
