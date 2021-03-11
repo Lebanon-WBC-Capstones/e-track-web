@@ -1,6 +1,6 @@
 import checked from '../../../assets/images/checked.png';
 import uncheck from '../../../assets/images/uncheck.png';
-import bin from '../../../assets/images/delete.png';
+import Bin from '../../../assets/icons/Bin.png';
 
 function TodoItem({ item, changeItem, deleteItem }) {
   return (
@@ -16,7 +16,7 @@ function TodoItem({ item, changeItem, deleteItem }) {
       </div>
       <img
         className="h-5 w-5 mr-3 cursor-pointer"
-        src={bin}
+        src={Bin}
         alt="options"
         onClick={() => deleteItem(item)}
       />

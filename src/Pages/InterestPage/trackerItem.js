@@ -1,5 +1,3 @@
-import uncheck from '../../assets/images/uncheck.png';
-import bin from '../../assets/images/delete.png';
 import { StateContext } from '../../StateProvider.js';
 import React, { useContext } from 'react';
 
