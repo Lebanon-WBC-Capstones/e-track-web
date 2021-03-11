@@ -58,53 +58,56 @@ function CollectionPage() {
   }
 
   return (
-    <div className="flex h-5/6">
-      <div className="h-5/6">
-        <div className="bg-white rounded-xl shadow-md  w-96 h-full px-12 mt-6 mx-8">
-          <div className="flex justify-center font-bold text-2xl p-6">
-            My Collections
+    <>
+      <div className="flex h-5/6 mx-9 my-5">
+        <div className="bg-white rounded-xl shadow-md h-full w-1/5 overflow-hidden">
+          <div className="my-5">
+            <h2 className="font-medium text-Grey text-base text-center">
+              My Collections
+            </h2>
           </div>
-
-          {collection.map((el) => {
-            return (
-              <CollectionListItem
-                number={count[el.id - 1]}
-                type={{ id: el.id }}
-                collectionFilter={collectionFilter}
-              />
-            );
-          })}
-          <div className="h-6"></div>
-
-          <div className="flex h-1/2  ">
-            <img className="h-5/6" src={bro} />
+          <div className="flex flex-col items-center justify-between h-4/5">
+            <div className="w-full ">
+              {collection.map((el) => {
+                return (
+                  <CollectionListItem
+                    number={count[el.id - 1]}
+                    type={{ id: el.id }}
+                    collectionFilter={collectionFilter}
+                  />
+                );
+              })}
+            </div>
+            <div>
+              <img src={bro} alt="style" />
+            </div>
+          </div>
+        </div>
+        <div className="w-4/5 px-5">
+          <div className="p-4 w-full rounded-xl shadow-md bg-white flex items-center">
+            <input
+              className="w-full border-2 p-1 border-gray-400 rounded-lg"
+              type="text"
+              placeholder="Search"
+              onChange={handleSearch}
+            />
+          </div>
+          <div className="h-4/5 overflow-y-scroll w-full mt-2">
+            <div className="grid grid-cols-4">
+              {filter.map((el) => {
+                return <CollectionCard card={el} sendCard={sendCardToModal} />;
+              })}
+            </div>
           </div>
         </div>
       </div>
-      <div className="overflow-y-scroll w-full">
-        <div className="flex flex-col justify-start p-4 w-full rounded-xl shadow-md  h-20 bg-white  mt-6">
-          <input
-            className="w-full border-2 border-gray-400 p-2 mb-8 rounded-lg"
-            type="text"
-            placeholder="Search"
-            onChange={handleSearch}
-          />
-
-          <div className="flex flex-wrap ">
-            {filter.map((el) => {
-              return <CollectionCard card={el} sendCard={sendCardToModal} />;
-            })}
-          </div>
-        </div>
-      </div>
-
       <FloatingBtn onClick={AddNewCard} />
 
       {showModal && (
         <CollectionCardModal setShowModal={setShowModal} card={element} />
       )}
       {showForm && <NewCardModal setShowForm={setShowForm} />}
-    </div>
+    </>
   );
 }
 export default CollectionPage;

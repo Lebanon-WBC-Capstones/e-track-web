@@ -6,16 +6,16 @@ export default function CollectionCard({ card, sendCard }) {
   const type = collection.find((el) => el.id === card.type.id);
   return (
     <div
-      className={`bg-${type.color} w-80 m-2 p-2 shadow-lg rounded-xl  `}
+      className={`bg-${type.color} min-w-60 m-2 p-2 shadow-lg rounded-xl  `}
       onClick={() => sendCard(card.id)}
     >
-      <p className="text-3xl text-center font-bold">{card.date}</p>
-      <p className="text-1xl text-center font-light">{type.name}</p>
+      <p className="font-medium text-Grey text-base text-center">{card.date}</p>
+      <p className="text-sm text-center font-light">{type.name}</p>
 
-      <div className=" h-20 overflow-y-hidden overflow-x-hidden">
-        <p className="text-2xl text-center font-semibold">{card.text}</p>
+      <div className="h-10 overflow-y-hidden overflow-x-hidden">
+        <p className="text-xs text-center font-semibold">{card.text}</p>
       </div>
-      <div className="flex justify-between p-2 w-10 h-10">
+      <div className="flex justify-between p-2 w-7 h-7">
         {card.starred === true && (
           <img
             src={starredIcon}
