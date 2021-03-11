@@ -10,7 +10,6 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { signInWithGoogle } from '../../../firebase.js';
 
-
 function Header({ func }) {
   let history = useHistory();
 
@@ -65,7 +64,7 @@ function Header({ func }) {
         </Link>
       </div>
 
-      <div className=" absolute top-7 right-12 ">
+      <div className=" absolute top-7 right-12 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ">
         <Button
           text={t(`landing.HeaderBtnStarted`)}
           onClick={() => {
