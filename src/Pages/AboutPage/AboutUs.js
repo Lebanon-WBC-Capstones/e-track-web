@@ -12,7 +12,7 @@ export default function AboutUs() {
   return (
     <div className="bg-gray-100 min-h-screen">
       <div className="absolute top-7 left-20">
-        <Link to="/Home">
+        <Link to="/">
           <button className="shadow-md  hover:text-primary hover:bg-gray-100 bg-primary text-white font-bold py-3 px-7 rounded-full">
             Home
           </button>
