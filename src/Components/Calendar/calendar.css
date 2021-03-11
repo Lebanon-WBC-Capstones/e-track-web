@@ -1,36 +1,10 @@
-.today,
-.today:hover {
+.event {
   background: #64cf62 !important;
   color: white;
   border-radius: 50%;
 }
-
-.Event,
-.Event:hover {
-  background: #37b4fb !important;
-  color: white;
-  border-radius: 50%;
-}
-
-.Reminder,
-.Reminder:hover {
-  background: #ff4f4f !important;
-  color: white;
-  border-radius: 50%;
-}
-
-.Birthday,
-.Birthday:hover {
-  background: #9e81f0 !important;
-  color: white;
-  border-radius: 50%;
-}
-
-.Period,
-.Period:hover {
-  background: #fb87e1 !important;
-  color: white;
-  border-radius: 50%;
+.event:hover {
+  background: #64cf62;
 }
 
 .react-calendar__tile:disabled {

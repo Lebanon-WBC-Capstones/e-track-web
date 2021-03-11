@@ -1,10 +1,21 @@
 import uncheck from '../../assets/images/uncheck.png';
 import bin from '../../assets/images/delete.png';
 
-function TrackerItem({ title, deadline, completeditems, changeElement, id }) {
+function TrackerItem({
+  title,
+  deadline,
+  completeditems,
+  changeElement,
+  id,
+  active,
+}) {
+  let color = 'white';
+  if (active) {
+    color = 'primary';
+  }
   return (
     <div
-      className="p-3 hover:bg-gray-300 cursor-pointer shadow-sm w-100 flex items-center justify-between "
+      className={`p-3  bg-${color} cursor-pointer shadow-sm w-100 flex items-center justify-between`}
       onClick={() => changeElement(id)}
     >
       <div className="flex w-4/6">

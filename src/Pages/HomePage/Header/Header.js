@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Logo from '../../../assets/images/Logo.png';
 import img1 from '../../../assets/images/img1.png';
-import languagePic from '../../../assets/images/languagePic.png';
-
 import Button from '../../../Components/button/button';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
 import { Link, useHistory } from 'react-router-dom';
 
 import { signInWithGoogle } from '../../../firebase.js';
-
 
 function Header({ func }) {
   let history = useHistory();
@@ -37,7 +34,7 @@ function Header({ func }) {
       <img
         src={img1}
         className="absolute top-0 right-0 w-6/12"
-        alt="background"
+        alt="background image"
         width="900"
       />
       {/*button to translate*/}
@@ -77,11 +74,11 @@ function Header({ func }) {
       <div className="absolute top-1/3 right-2/4 h-60">
         <div className="leading-10 font-bold md:text-center ">
           <span className="text-4xl ">
-            {t(`landing.Header1`)}
-            <span className="text-primary"> {t(`landing.Header2`)} </span>
+            Your life is your biggest
+            <span className="text-primary"> Project </span>
           </span>
           <br />
-          <span className="text-5xl ">{t(`landing.Header3`)} </span>
+          <span className="text-5xl ">Track it the right way </span>
         </div>
         <div className="absolute bottom-0 w-full">
           <div className="flex justify-center transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">

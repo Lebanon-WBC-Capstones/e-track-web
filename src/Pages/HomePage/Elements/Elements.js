@@ -10,10 +10,8 @@ import shape from './images/shape.png';
 import up from './images/up.png';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { useTranslation } from 'react-i18next';
 
 export default function Elements() {
-  const { t, i18n } = useTranslation();
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
@@ -30,21 +28,13 @@ export default function Elements() {
               <img
                 src={todo}
                 alt={todo}
-                className={
-                  i18n.language === 'en'
-                    ? 'rounded shadow-md left-32 top-20 relative'
-                    : 'rounded shadow-md relative top-20'
-                }
+                className="rounded shadow-md left-32 top-20 relative"
                 data-aos="zoom-in"
               />
               <img
                 src={progress}
                 alt={progress}
-                className={
-                  i18n.language === 'en'
-                    ? 'rounded shadow-md relative left-96 w-60 h-50'
-                    : 'rounded shadow-md relative right-44 w-60 h-50 bottom '
-                }
+                className="rounded shadow-md relative left-96 w-60 h-50"
                 data-aos="zoom-in"
               />
             </div>
@@ -53,11 +43,11 @@ export default function Elements() {
                 className="leading-10 text-2xl pb-4  font-bold "
                 data-aos="fade-left"
               >
-                {t(`landing.Dashboard1`)}
+                Your Dashboard
               </p>
               <p className="text-xl max-w-xl " data-aos="fade-left">
-                {t(`landing.Dashboard2`)}
-                <br /> {t(`landing.Dashboard3`)}
+                A place where you can check your
+                <br /> To-do list and your Goals
               </p>
               <br />
             </div>
@@ -70,11 +60,11 @@ export default function Elements() {
                 className="leading-10 text-2xl pb-4  font-bold "
                 data-aos="fade-right"
               >
-                {t(`landing.Tracker1`)}
+                Your Trackers
               </p>
               <p className="text-xl" data-aos="fade-left">
-                {t(`landing.Tracker2`)}
-                <br /> {t(`landing.Tracker3`)}
+                Here you can keep track on your daily
+                <br /> activities and your habits
               </p>
               <br />
             </div>
@@ -105,7 +95,7 @@ export default function Elements() {
                 <img
                   src={lazy}
                   alt={lazy}
-                  className="shadow-md rounded-3xl mt-64 ml-96 w-52 "
+                  className="shadow-md rounded-3xl mt-64 ml-96 w-52"
                   data-aos="zoom-in"
                 />
                 <img
@@ -129,11 +119,11 @@ export default function Elements() {
                 className="leading-10 text-2xl pb-4  font-bold "
                 data-aos="fade-left"
               >
-                {t(`landing.Mood1`)}
+                Mood Tracker?
               </p>
               <p className="text-xl pb-12 max-w-xl " data-aos="fade-left">
-                {t(`landing.Mood2`)}
-                <br /> {t(`landing.Mood3`)}
+                Yes, you can also track your mood
+                <br /> during the whole year.
               </p>
               <br />
             </div>

@@ -8,7 +8,7 @@ function TodoItem({ item, changeItem, deleteItem }) {
       <div className="flex">
         <img
           onClick={() => changeItem(item)}
-          className="h-5 w-5 mx-5 place-self-center cursor-pointer"
+          className="h-5 w-5 mr-5 place-self-center cursor-pointer"
           src={item.done ? checked : uncheck}
           alt="status"
         />

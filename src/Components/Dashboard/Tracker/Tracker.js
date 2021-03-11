@@ -4,7 +4,9 @@ import Addnew from '../../../assets/images/Addnew.png';
 function Tracker({ tracker }) {
   let today = null;
   if (tracker) {
-    today = tracker.track.find((el) => el.date === new Date().toDateString());
+    today = tracker.track.filter(
+      (el) => el.date === new Date().toDateString()
+    )[0];
   }
   return (
     <div className="bg-white text-Grey rounded-xl shadow-md p-3 min-w-min">

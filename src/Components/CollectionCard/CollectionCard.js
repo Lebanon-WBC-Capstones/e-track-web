@@ -4,7 +4,7 @@ import starredIcon from '../../assets/icons/Star.png';
 import collection from '../../Constants/collection.js';
 
 export default function CollectionCard({ card }) {
-  const type = collection.find((el) => el.id === card.type.id);
+  const type = collection.find((el) => el.id === card.type.id)
   return (
     <div className={`bg-${type.color} w-80 m-2 p-2 shadow-2xl rounded-xl`}>
       <p className="text-3xl text-center font-bold">{card.date}</p>
@@ -23,5 +23,7 @@ export default function CollectionCard({ card }) {
         )}
       </div>
     </div>
-  );
+  )
 }
+
+
