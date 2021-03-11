@@ -6,9 +6,14 @@ import languagePic from '../../../assets/images/languagePic.png';
 import Button from '../../../Components/button/button';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
-function Header() {
+import { signInWithGoogle } from '../../../firebase.js';
+
+
+function Header({ func }) {
+  let history = useHistory();
+
   const [lan, setLan] = useState('En');
   const { t, i18n } = useTranslation();
   const changeLanguage = (language) => {
@@ -52,16 +57,21 @@ function Header() {
         />
       </div>
 
-      <div className="  absolute top-7 right-48 ">
+      <div className="  absolute top-7 right-48 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ">
         <Link to="/about">
-          <button className="shadow-md  hover:text-primary text-white font-bold py-3 px-7 rounded-full">
+          <button className="shadow-md  hover:text-white text-primary font-bold py-3 px-7 rounded-full">
             {t(`landing.HeaderBtnAbout`)}
           </button>
         </Link>
       </div>
 
       <div className=" absolute top-7 right-12 ">
-        <Button text={t(`landing.HeaderBtnStarted`)} />
+        <Button
+          text={t(`landing.HeaderBtnStarted`)}
+          onClick={() => {
+            signInWithGoogle().then(() => history.push('/home'));
+          }}
+        />
       </div>
 
       <div className="absolute top-1/3 right-2/4 h-60">
@@ -74,8 +84,8 @@ function Header() {
           <span className="text-5xl ">{t(`landing.Header3`)} </span>
         </div>
         <div className="absolute bottom-0 w-full">
-          <div className="flex justify-center">
-            <Button text={t(`landing.HeaderButton`)} />
+          <div className="flex justify-center transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+            <Button text={t(`landing.HeaderButton`)} onClick={() => func()} />
           </div>
         </div>
       </div>
