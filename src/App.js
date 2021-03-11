@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import LandingPage from './Pages/LandingPage/LandingPage.js';
 import AboutUs from './Pages/AboutPage/AboutUs.js';
 import NotFound from './Pages/NotFound/NotFound.js';
@@ -14,9 +15,38 @@ import Navbar from './Components/Navbar/Navbar.js';
 
 import 'aos/dist/aos.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { StateContext } from './StateProvider.js';
+import { useState, useEffect, useContext } from 'react';
+import { auth } from './firebase.js';
 
 function App() {
-  let signedin = true;
+  const [state, dispatch] = useContext(StateContext);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((userAuth) => {
+      setUser(userAuth);
+      if (userAuth) {
+        const newData = {
+          id: userAuth.uid,
+          email: userAuth.email,
+          name: userAuth.displayName,
+          Avatar: userAuth.photoURL,
+          language: 'En',
+          gender: 'male',
+          birthday: {
+            month: 0,
+            day: 1,
+            year: 1980,
+          },
+          theme_id: 1,
+        };
+        dispatch({ type: 'SET_PROFILE', payload: newData });
+      } else {
+      }
+    });
+  }, []);
+
   return (
     <Router>
       <div>
@@ -28,7 +58,7 @@ function App() {
             <LandingPage />
           </Route>
 
-          {signedin ? (
+          {user ? (
             <div className="bg-lightGrey h-screen">
               <Navbar />
               <Route path="/collections" exact>
