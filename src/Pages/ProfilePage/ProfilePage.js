@@ -5,6 +5,7 @@ import { StateContext } from '../../StateProvider.js';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
 import { auth } from './../../firebase.js';
+import React from 'react';
 
 import Button from '../../Components/button/button.js';
 import { useHistory } from 'react-router';
@@ -129,7 +130,7 @@ function SettingsPage() {
         <div className="w-full shadow-sm p-4">
           <div className="flex items-center m-2">
             <div className="w-2/12">
-              <p>Gender:</p>
+              <p>{t(`Profile.gender`)}</p>
             </div>
             <div className="flex w-full items-center mx-3">
               <input
@@ -141,7 +142,7 @@ function SettingsPage() {
                 onChange={onValueChange}
                 checked={gender === 'male'}
               />
-              <label for="male">Male</label>
+              <label for="male">{t(`Profile.male`)}</label>
               <input
                 type="radio"
                 id="female"
@@ -151,12 +152,12 @@ function SettingsPage() {
                 onChange={onValueChange}
                 checked={gender === 'female'}
               />
-              <label for="female">Female</label>
+              <label for="female">{t(`Profile.female`)}</label>
             </div>
           </div>
           <div className="flex items-center m-2">
             <div className="w-2/12">
-              <p>Birthday:</p>
+              <p>{t(`Profile.birthday`)}</p>
             </div>
             <div className="flex w-full">
               <select
@@ -191,7 +192,7 @@ function SettingsPage() {
           </div>
           <div className="flex items-center m-2">
             <div className="w-2/12">
-              <p>Language:</p>
+              <p>{t(`Profile.language`)}</p>
             </div>
             <div className="flex w-full">
               <select
@@ -212,7 +213,7 @@ function SettingsPage() {
         </div>
         <div className="w-full shadow-sm p-4">
           <div className="flex justify-center items-center">
-            <p>Theme:</p>
+            <p>{t(`Profile.theme`)}</p>
             <div className="flex justify-between w-full mx-20">
               {themes.map((el) => {
                 return (
@@ -240,12 +241,12 @@ function SettingsPage() {
               className="shadow-md text-red-400 hover:text-white font-bold py-3 px-7 rounded-full hover:bg-red-400"
               onClick={logout}
             >
-              Log out
+              {t(`Profile.logout`)}
             </button>
           </div>
           <div className="px-3">
             <Button
-              text="Save"
+              text={t(`Profile.save`)}
               onClick={saveData}
               theme={`theme${state.profile.theme_id}`}
             />

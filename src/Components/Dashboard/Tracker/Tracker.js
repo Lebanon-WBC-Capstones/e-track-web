@@ -1,7 +1,10 @@
 //props example : {title:"Read"}
+import { useTranslation } from 'react-i18next';
 import Addnew from '../../../assets/images/Addnew.png';
+import React from 'react';
 
 function Tracker({ tracker }) {
+  const { t, i18n } = useTranslation();
   let today = null;
   if (tracker) {
     today = tracker.track.find((el) => el.date === new Date().toDateString());
@@ -18,16 +21,20 @@ function Tracker({ tracker }) {
             src={Addnew}
             alt="add"
           />
-          <h1 className="font-medium text-Grey">Add new Tracker</h1>
+          <h1 className="font-medium text-Grey">{t(`Dashboard.addtracker`)}</h1>
         </div>
       ) : today.status !== 'checked' ? (
         <p className="text-center text-Grey">
-          You did not “{tracker.title}” today
+          {t(`Dashboard.unfinishedTracker1`)} “{tracker.title}”{' '}
+          {t(`Dashboard.unfinishedTracker2`)}
         </p>
       ) : (
         <div className="text-center text-Grey">
-          <p>You did “{tracker.title}” today,</p>
-          <p> Check other trackers</p>{' '}
+          <p>
+            {t(`Dashboard.finishedTracker1`)} “{tracker.title}”{' '}
+            {t(`Dashboard.finishedTracker2`)}
+          </p>
+          <p> {t(`Dashboard.finishedTracker3`)}</p>{' '}
         </div>
       )}
     </div>
