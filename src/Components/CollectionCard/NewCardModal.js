@@ -3,7 +3,6 @@ import Star from '../../assets/icons/Star1.png';
 import FullStar from '../../assets/icons/Star.png';
 import collection from '../../Constants/collection.js';
 import { StateContext } from '../../StateProvider.js';
-import { useEffect } from 'react';
 
 export default function NewCardModal({ setShowForm }) {
   const [state, dispatch] = useContext(StateContext);
