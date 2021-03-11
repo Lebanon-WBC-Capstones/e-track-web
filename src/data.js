@@ -84,7 +84,6 @@ export const initialState = {
   ],
   collections: [
     {
-      id: 1,
       date: 'Sun Feb 28 2021',
       id: 1,
       type: { id: 5 },
@@ -92,7 +91,6 @@ export const initialState = {
       starred: true,
     },
     {
-      id: 2,
       date: 'Sun Feb 28 2021',
       id: 2,
       type: { id: 5 },
@@ -102,7 +100,7 @@ export const initialState = {
     {
       date: 'Sun Feb 28 2021',
       id: 3,
-      type: { id: 5 },
+      type: { id: 2 },
       text: 'I just waant to die XD',
       img: '',
       starred: true,
