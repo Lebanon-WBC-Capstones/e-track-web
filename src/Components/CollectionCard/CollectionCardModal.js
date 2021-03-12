@@ -27,7 +27,7 @@ export default function CollectionCardModal({ card, setShowModal }) {
       id: card.id,
       type: { ...card.type },
       text: card.text,
-      starred: !card.starred,
+      starred: !star,
     };
     newData.push(obj);
     dispatch({ type: 'SET_COLLECTION', payload: newData });

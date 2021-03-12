@@ -20,6 +20,7 @@ function CollectionPage() {
 
   useEffect(() => {
     setfilter(state.collections);
+    console.log(state.collections);
   }, [state.collections]);
 
   state.collections.sort((x, y) =>
