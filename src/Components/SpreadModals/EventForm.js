@@ -92,7 +92,7 @@ export default function EventForm({ setShowForm }) {
                             className="flex items-center place-items-center content-center text-center rounded-full h-5 w-5 shadow-md p-3"
                           ></button>
                           <span className="ml-2 text-gray-700 pt-1">
-                            {el.name}
+                            {t(`EventsType.${el.name}`)}
                           </span>
                         </label>
                       )

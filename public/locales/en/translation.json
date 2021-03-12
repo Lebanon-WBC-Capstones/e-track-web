@@ -21,9 +21,9 @@
             "About4":"track and monitor your everyday life.",
             "About5":"The website shall help you organize",
             "About6":" your time and tasks with habits",
-            "About7":"trackers, spreads and collections.",
+            "About7":"interest trackers, spreads and collections.",
             "Dashboard1":"Your Dashboard",
-            "Dashboard2":" A place where you can check your",
+            "Dashboard2":"Where you can check your",
             "Dashboard3":"To-do list and your Goals",
             "Tracker1":" Your Trackers",
             "Tracker2":"Here you can keep track on your daily",
@@ -58,9 +58,9 @@
             "JanaRole":"Junior Engineer",
             "IbrahimName":"Ibrahim Nour",
             "IbrahimRole":"Junior Engineer",
-            "BassamName":"Bassame Edelbi",
+            "BassamName":"Bassam Edelbi",
             "BassamRole":"Junior Engineer",
-            "TommyName":"Tommy Chaanin",
+            "TommyName":"Tommy Chaanine",
             "TommyRole":"Junior Engineer",
             "AbadName":"Abdellatif Edlby",
             "AbadRole":"Junior Engineer"
@@ -88,6 +88,7 @@
             "todolist":"My Todo List",
             "addTodo":"Add new Todo",
             "addtracker":"Add new Tracker",
+            "trackers":"Trackers",
             "unfinishedTracker1":"you did not",
             "unfinishedTracker2":"today",
             "finishedTracker1":"you did",
@@ -118,5 +119,32 @@
             "theme": "theme: ",
             "save": "Save",
             "logout": "Log out"
+        },
+
+        "Habit_form":{
+            "newHabit":"Add new Habit",
+            "title": "Title",
+            "duration":"Choose duration",
+            "btn":"Add Habit"
+        },
+
+        "HabitTrackerPage":{
+            "search":"Search",
+            "completed":"Completed",
+            "ongoing":"Ongoing",
+            "all": "All Tracks"
+        },
+
+        "Mood":{
+            "comingSoon":"Coming Soon",
+            "moodTracker":"Mood Tracker"
+        },
+
+        "EventsType":{
+            "Event":"Event",
+            "Reminder":"Reminder",
+            "Birthday":"Birthday",
+            "Period":"Period"
         }
+        
 }

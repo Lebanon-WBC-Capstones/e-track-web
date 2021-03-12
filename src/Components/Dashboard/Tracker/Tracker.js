@@ -1,7 +1,7 @@
 //props example : {title:"Read"}
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Addnew from '../../../assets/images/Addnew.png';
-import React from 'react';
 
 function Tracker({ tracker }) {
   const { t, i18n } = useTranslation();
@@ -12,7 +12,7 @@ function Tracker({ tracker }) {
   return (
     <div className="bg-white text-Grey rounded-xl shadow-md p-3 min-w-min">
       <h2 className="font-medium text-Grey text-base text-center pb-3">
-        Trackers
+        {t(`Dashboard.trackers`)}
       </h2>
       {!tracker ? (
         <div className="opacity-30 flex items-center justify-center">
