@@ -56,13 +56,13 @@ function Header({ func }) {
 
       <div className="  absolute top-7 right-48 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ">
         <Link to="/about">
-          <button className="shadow-md  hover:text-white text-primary font-bold py-3 px-7 rounded-full">
+          <button className="shadow-md  hover:text-primary text-primary font-bold py-3 px-7 rounded-full">
             {t(`landing.HeaderBtnAbout`)}
           </button>
         </Link>
       </div>
 
-      <div className=" absolute top-7 right-12 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ">
+      <div className="absolute top-7 right-12 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
         <Button
           text={t(`landing.HeaderBtnStarted`)}
           onClick={() => {
