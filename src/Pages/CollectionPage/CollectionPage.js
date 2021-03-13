@@ -96,7 +96,7 @@ function CollectionPage() {
               onChange={handleSearch}
             />
             <button
-              className="background-transparent border-2 p-2 border-gray-400 rounded-lg flex items-center justify-center mx-6 my-2 text-sm outline-none focus:outline-none w-2/5"
+              className="background-transparent border-2 p-2 border-gray-400 rounded-lg flex items-center justify-center mx-6 text-sm outline-none focus:outline-none w-2/5"
               type="button"
               style={{ transition: 'all .15s ease' }}
               onClick={clearFilter}
