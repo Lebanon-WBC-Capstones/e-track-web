@@ -34,6 +34,10 @@ function CollectionPage() {
     setShowForm(true);
   }
 
+  function clearFilter() {
+    setfilter(state.collections);
+  }
+
   function handleSearch(e) {
     const description = e.target.value.trim().toLowerCase();
     if (description === '') {
@@ -86,11 +90,19 @@ function CollectionPage() {
         <div className="w-4/5 px-5">
           <div className="p-4 w-full rounded-xl shadow-md bg-white flex items-center">
             <input
-              className="w-full border-2 p-1 border-gray-400 rounded-lg"
+              className="w-full border-2 h-10 p-1 border-gray-400 rounded-lg"
               type="text"
               placeholder="Search"
               onChange={handleSearch}
             />
+            <button
+              className="background-transparent border-2 p-2 border-gray-400 rounded-lg flex items-center justify-center mx-6 my-2 text-sm outline-none focus:outline-none w-2/5"
+              type="button"
+              style={{ transition: 'all .15s ease' }}
+              onClick={clearFilter}
+            >
+              <p className="px-2 text-gray-400">Show All</p>
+            </button>
           </div>
           <div className="h-4/5 overflow-y-scroll w-full mt-2">
             <div className="grid grid-cols-4">
