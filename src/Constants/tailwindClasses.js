@@ -19,4 +19,7 @@
    * bg-indigo-400
    * bg-yellow-200
 
+ toast:
+    * bg-red-400
+    * text-red-400
    */
