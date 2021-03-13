@@ -1,28 +1,24 @@
 import React from 'react';
-import notrack from '../../assets/images/NoTrack.png';
+import notrack from '../../assets/images/noTrack.png';
 import Button from '../../Components/button/button.js';
-function noTrack() {
+function NoTrack({ onClick }) {
   return (
-    <div className="flex flex-col items-center ">
-      <div className="flex flex-col items-center relative">
-        <img
-          src={notrack}
-          className="bg-center bg-contain bg-white pb-20 px-16 z-0 mt-20 w-10/12 rounded-xl shadow-md"
-        />
-        <p className="text-xl z-10 absolute bottom-20 -m-4">
-          <b> No Trackers Yet!</b>
-        </p>
-        <div className="text-xs absolute -m-8 bottom-12">
-          <Button
-            text="Add a new Tracker"
-            onClick={() => {
-              alert('Hello!');
-            }}
-          />
+    <div className="h-5/6 flex mx-9 my-5 justify-center ">
+      <div className="bg-white shadow m-2 w-2/5 h-full border rounded-lg">
+        <div className="flex flex-col items-center ">
+          <div className="flex flex-col items-center relative">
+            <img src={notrack} className="  px-16 z-0 mt-20 w-10/12  " />
+            <p className="text-xl z-10">
+              <b> No Trackers Yet!</b>
+            </p>
+            <div className="text-xs ">
+              <Button text="Add a new Tracker" onClick={onClick} />
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default noTrack;
+export default NoTrack;
