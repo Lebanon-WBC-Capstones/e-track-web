@@ -186,13 +186,16 @@ const InterestPage = () => {
         <div className="bg-white shadow m-2 w-3/5 h-full border rounded-lg ">
           <div className="p-4 w-full bg-white flex items-center">
             <input
-              className="w-full border-2 p-1 border-gray-400 rounded-lg w-3/5"
+              className="w-full border-2 p-1 border-gray-400 rounded-lg w-2/5"
               type="text"
               placeholder="Search"
               onChange={handleSearch}
             />
+            <div className="border-2 mx-2 p-1 border-gray-400 rounded-lg w-1/5 text-gray-400 ">
+              <span className="font-semibold">Goal:</span> {element.goal}
+            </div>
             <button
-              className="background-transparent border-2 p-1 border-red-300 rounded-lg flex items-center justify-center mx-6 my-2 text-sm outline-none focus:outline-none w-2/5"
+              className="background-transparent border-2 p-1 border-red-300 rounded-lg flex items-center justify-center  my-2 text-sm outline-none focus:outline-none w-2/5"
               type="button"
               style={{ transition: 'all .15s ease' }}
               onClick={() => deleteTracker(element.id)}
