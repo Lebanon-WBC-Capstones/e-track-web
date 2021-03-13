@@ -6,7 +6,7 @@
             "Interest":"إهتمامات",
             "Mood":"المزاج",
             "Collections":"محفوضات",
-            "Profile":"الإعدادات"
+            "Profile":"الملفّ الشحصي"
         },
         "landing":{
             "Header1":" حياتك هي اكبر ",
@@ -30,7 +30,7 @@
             "Tracker3":"اليومية، بالإضافة إلى هواياتك",
             "Mood1":"مزاجك",
             "Mood2":"كذلك، يمكنك أن تتتبّع مزاجك",
-            "Mood3":"على مدار السّنةأيضًا.",
+            "Mood3":"على مدار السّنة.",
             "Journal1":"مسيرتك تبدأ",
             "Journal2":"من هنا",
             "JournalBottom":"إبدأ الآن"
@@ -38,7 +38,7 @@
 
         "aboutus":{
             "aboutus1":"مشروعنا",
-            "aboutus2":"يتمحور هدفنا الأساسي إلى تنظينم وإدارة ",
+            "aboutus2":"  يهدف مشروعنا إلى تنظيم وإدارة ",
             "aboutus3":"أهمّ مشروع يمكن لأيّ شخص أن يبتنّاه",
             "aboutus4":"وهو “حياتنا الخاصة”",
             "aboutus5":" لقد سمعتُ عن ال Bullet Journal منذ بضع سنوات،",
@@ -89,6 +89,7 @@
             "todolist":"لائحة المهام",
             "addTodo":"إضافة مهمة  ",
             "addtracker":"إضافة عادة ",
+            "trackers":"العادات",
             "finishedTracker1":"لقد قمت بـ",
             "finishedTracker2":"اليوم",
             "unfinishedTracker1":"لم تقم بـ",
@@ -97,7 +98,7 @@
         },
 
         "SpreadForm":{
-            "event": "إضافة منسَابة جديدة",
+            "event": "إضافة مناسَبة جديدة",
             "event_name": "إسم المناسَبة",
             "event_description": "شرح المناسَبة",
             "event_date":"تاريخ المناسَبة",
@@ -117,6 +118,32 @@
             "language": "اللغة: ",
             "theme": "النّمط: ",
             "save": "حفظ",
-            "Logout": "خروج"
+            "logout": "تسجيل خروج"
+        },
+
+        "Habit_form":{
+            "newHabit":"أضف عادة جديدة",
+            "title": "العنوان",
+            "duration":"إختر الفترة",
+            "btn":"إضف العادة"
+        },
+
+        "HabitTrackerPage":{
+            "search":"إبحث",
+            "completed":"مكتمل",
+            "ongoing":"مستمرّ ",
+            "all": "كلّ العادات"
+        },
+
+        "Mood":{
+            "comingSoon":"ترقّبوها قريبًا",
+            "moodTracker":"تتبّع مزاجك"
+        },
+
+        "EventsType":{
+            "Event":"مناسَبة",
+            "Reminder":"تذكير",
+            "Birthday":"عيد ميلاد",
+            "Period":"الدورة"
         }
 }

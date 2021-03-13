@@ -5,11 +5,13 @@ import FloatingBtn from '../../Components/floatingBtn/floatingBtn.js';
 import HabitTrackerForm from '../../Components/HabitTracker/HabitTrackerForm.js';
 
 import { StateContext } from '../../StateProvider.js';
+import { useTranslation } from 'react-i18next';
 
 function TrackerPage() {
   const [showForm, setShowForm] = useState(false);
   const [state, dispatch] = useContext(StateContext);
   const [filterTracker, setfilterTracker] = useState(state.trackers);
+  const { t } = useTranslation();
 
   useEffect(() => {
     showAll();
@@ -84,7 +86,7 @@ function TrackerPage() {
           <input
             className="w-8/12 border-2 border-gray-400 p-1 rounded-lg "
             type="text"
-            placeholder="Search"
+            placeholder={t(`HabitTrackerPage.search`)}
             onChange={handleSearch}
           />
           <div
@@ -92,14 +94,18 @@ function TrackerPage() {
             onClick={filterCompleted}
           >
             <div className="bg-primary rounded-full w-5 h-5 m-2"></div>
-            <p className="text-gray-800 text-s">Completed</p>
+            <p className="text-gray-800 text-s">
+              {t(`HabitTrackerPage.completed`)}
+            </p>
           </div>
           <div
             className="flex justify-center items-center cursor-pointer"
             onClick={filterProgress}
           >
             <div className=" bg-gray-300 rounded-full w-5 h-5 m-2"></div>
-            <p className="text-gray-800 text-s">ongoing</p>
+            <p className="text-gray-800 text-s">
+              {t(`HabitTrackerPage.ongoing`)}
+            </p>
           </div>
 
           <div
@@ -107,7 +113,7 @@ function TrackerPage() {
             onClick={showAll}
           >
             <div className=" bg-blue-400 rounded-full w-5 h-5 m-2"></div>
-            <p className="text-blue-400 text-s">All tracks</p>
+            <p className="text-blue-400 text-s">{t(`HabitTrackerPage.all`)}</p>
           </div>
         </div>
 

@@ -1,11 +1,10 @@
+import React, { useState, useRef, useContext } from 'react';
 import Avatar from '../../assets/images/Avatar.png';
 import themes from '../../Constants/themes.js';
-import { useState, useRef, useContext } from 'react/cjs/react.development';
 import { StateContext } from '../../StateProvider.js';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
 import { auth } from './../../firebase.js';
-import React from 'react';
 
 import Button from '../../Components/button/button.js';
 import { useHistory } from 'react-router';
