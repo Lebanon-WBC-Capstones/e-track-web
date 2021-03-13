@@ -65,7 +65,7 @@ export default function NewCardModal({ setShowForm }) {
                   >
                     {
                       <img
-                        src={starred ? FullStar : Star}
+                        src={starred ? Star : FullStar}
                         alt="star"
                         className="w-7 h-7"
                       />

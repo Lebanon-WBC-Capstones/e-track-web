@@ -1,7 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { StateContext } from '../../StateProvider';
 import Toast from '../../Components/Toast/Toast.js';
-import { useState } from 'react/cjs/react.development';
 import Bin from '../../assets/icons/Bin.png';
 
 const HabitTrackerItem = ({ tracker, click }) => {
@@ -53,12 +52,12 @@ const HabitTrackerItem = ({ tracker, click }) => {
                   </div>
                   {i === tracker.track.length - 1 ? null : (
                     <div
-                      className="relative right-2 w-1/6 align-center items-center align-middle content-center flex "
+                      className="right-2 w-1/6 align-center items-center align-middle content-center flex "
                       key={el.id}
                     >
                       <div className="w-2 bg-grey-light rounded items-center align-middle align-center flex-1 ">
                         <div
-                          className={`bg-${color} text-xs leading-none py-1 text-center text-grey-darkest rounded w-6 z-0 `}
+                          className={`bg-${color} text-xs leading-none -mx-2 py-1 text-center text-grey-darkest rounded w-6 z-0 `}
                         ></div>
                       </div>
                     </div>

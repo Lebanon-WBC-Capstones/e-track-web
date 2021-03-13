@@ -18,7 +18,6 @@ function InterestPage() {
       ) : (
         <Mainpage />
       )}
-
       {showForm && <Form setShowForm={setShowForm} />}
     </>
   );

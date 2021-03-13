@@ -3,9 +3,11 @@ import EventsType from '../../Constants/EventsType.js';
 
 import { useRef, useState, useContext } from 'react';
 import { StateContext } from '../../StateProvider.js';
+import { useTranslation } from 'react-i18next';
 
 export default function HabitTrackerForm({ setShowForm }) {
   const [state, dispatch] = useContext(StateContext);
+  const { t } = useTranslation();
 
   const title = useRef(null);
   const duration = useRef(null);
@@ -46,7 +48,7 @@ export default function HabitTrackerForm({ setShowForm }) {
           <div className=" rounded-lg h-full shadow-lg relative modal-close flex flex-col w-full text-center bg-white outline-none focus:outline-none">
             <div className=" items-start justify-between px-20 py-8 rounded-t modal-content">
               <h2 className="font-medium text-center pb-3 text-xl">
-                Add new Habit
+                {t(`Habit_form.newHabit`)}
               </h2>
               <form onSubmit={AddTracker}>
                 <div className="mb-4">
@@ -54,7 +56,7 @@ export default function HabitTrackerForm({ setShowForm }) {
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     name="title"
                     type="text"
-                    placeholder="Title"
+                    placeholder={t(`Habit_form.title`)}
                     required
                     ref={title}
                   />
@@ -69,7 +71,7 @@ export default function HabitTrackerForm({ setShowForm }) {
                     ref={duration}
                   >
                     <option value="" disabled selected>
-                      Choose duration
+                      {t(`Habit_form.duration`)}
                     </option>
                     <option value="7">7</option>
                     <option value="14">14</option>
@@ -80,7 +82,7 @@ export default function HabitTrackerForm({ setShowForm }) {
                 <div className="p-5 pb-0">
                   <input
                     type="submit"
-                    value="Add Habit"
+                    value={t(`Habit_form.btn`)}
                     className={`shadow-md bg-theme${state.profile.theme_id} hover:bg-gray-100 hover:text-theme${state.profile.theme_id} text-white font-bold py-3 px-7 rounded-full`}
                   />
                 </div>
