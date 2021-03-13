@@ -6,6 +6,11 @@
    * text-theme3
    * text-theme4
    * text-theme5
+   * hover:text-theme1
+   * hover:text-theme2
+   * hover:text-theme3
+   * hover:text-theme4
+   * hover:text-theme5
    * bg-theme1
    * bg-theme2
    * bg-theme3
@@ -19,4 +24,7 @@
    * bg-indigo-400
    * bg-yellow-200
 
+ toast:
+    * bg-red-400
+    * text-red-400
    */

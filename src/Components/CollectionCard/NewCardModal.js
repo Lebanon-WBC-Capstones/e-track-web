@@ -81,7 +81,7 @@ export default function NewCardModal({ setShowForm }) {
                       Cancel
                     </button>
                     <input
-                      className={`shadow-md bg-theme${state.profile.theme_id} mx-5 text-white text-sm font-bold px-6 py-2 rounded-full`}
+                      className={`shadow-md bg-theme${state.profile.theme_id} mx-5 text-white text-sm font-bold px-6 py-2 rounded-full cursor-pointer`}
                       type="submit"
                       value="Save"
                     />
